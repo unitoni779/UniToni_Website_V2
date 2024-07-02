@@ -1,0 +1,7 @@
+/* src/styles.css */
+.bg-custom-image {
+    background-image: url('./inter.png');
+    background-size: cover;
+    background-position: center;
+  }
+  

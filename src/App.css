@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+/* HorizontalScroll.css */
+
+html {
+  overflow-y: scroll;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  overflow-y: visible;
+  position: relative;
+  height: unset;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html, body {
+  overflow-x: hidden;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 400%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.firstContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  background: yellow;
 }
 
-.App-link {
-  color: #61dafb;
+.lastContainer {
+  display: flex;
+  height: 100vh;
+  background: yellow;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  flex: 1 0 100%;
+  min-height: 100vh;
+}
+
+.blue {
+  background-color: #5bc0de;
+}
+
+.red {
+  background-color: #d9534f;
+}
+
+.orange {
+  background-color: #f0ad4e;
+}
+
+.purple {
+  background-color: #5e5e5e;
+}
+
+.description {
+  color: #fff;
+  text-align: center;
+  font-size: 2em;
+}
+
+.scroll-down {
+  margin-top: 20px;
+}
+
+.arrow {
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 10px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
 }
