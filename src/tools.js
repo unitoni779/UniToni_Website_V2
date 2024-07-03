@@ -9,7 +9,7 @@ const iconStyles = {
 const IntegratedLearningTools = () => {
   return (
     <section className="bg-gradient-to-b from-white to-white py-16 font-sans">
-      <div className="container mx-auto px-4">
+  
         <h2 className="text-center text-4xl font-bold text-gray-900 mb-12">
           Integrated Learning Tools
         </h2>
@@ -47,7 +47,7 @@ const IntegratedLearningTools = () => {
             </p>
           </div>
         </div>
-      </div>
+  
     </section>
   );
 };

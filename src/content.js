@@ -2,7 +2,8 @@ import React from 'react';
 
 const ServicesSection = () => {
     return (
-        <div className="container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5" style={{ fontFamily: "'Poppins', sans-serif",marginTop:"50px" }}>
+        <div className=" bg-gradient-to-b from-white to-white">
+        <div className=" bg-gradient-to-b from-white to-white container relative flex flex-col justify-between h-full max-w-6xl px-10 mx-auto xl:px-0 mt-5" style={{ fontFamily: "'Poppins', sans-serif",marginTop:"50px" }}>
             <h2 className="mb-1 text-3xl font-extrabold leading-tight text-gray-900 text-center">TOGETHER WE HELP YOU ELEVATE LEARNING AND CAMPUS LIFE</h2>
         
             <div className="w-full" style={{ marginTop: "40px" }}>
@@ -49,6 +50,7 @@ const ServicesSection = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

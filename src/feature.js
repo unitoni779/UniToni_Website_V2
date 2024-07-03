@@ -6,7 +6,7 @@ import { FaRegLightbulb } from 'react-icons/fa';
 const FeaturesSection = () => {
   return (
     <div className="bg-white-100 py-12 font-sans">
-      <div className="container mx-auto px-4">
+    
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Feature 1 */}
           <div className="flex flex-col items-center">
@@ -41,7 +41,7 @@ const FeaturesSection = () => {
             </div>
           </div>
         </div>
-      </div>
+ 
     </div>
   );
 }
