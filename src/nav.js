@@ -29,7 +29,7 @@ const NavBar = () => {
           <ul className="flex md:flex-row flex-col md:items-center md:gap-[4vw] gap-8">
             <li>
               <a
-                className="hover:text-gray-500 font-bold text-lg font-sans text-[#112d42]" 
+                className="hover:text-gray-500 font-bold text-md font-sans text-[#112d42]" 
                 style={{ color: '#112d42' }}
                 href="#"
               >
@@ -38,7 +38,7 @@ const NavBar = () => {
             </li>
             <li>
               <a
-                className="hover:text-gray-500 font-bold text-lg font-sans text-[#112d42]"
+                className="hover:text-gray-500 font-bold text-md font-sans text-[#112d42]"
                 style={{ color: '#112d42' }}
                 href="#"
               >
@@ -47,7 +47,7 @@ const NavBar = () => {
             </li>
             <li>
               <a
-                className="hover:text-gray-500 font-bold text-lg font-sans text-[#112d42]"
+                className="hover:text-gray-500 font-bold text-md font-sans text-[#112d42]"
                 style={{ color: '#112d42' }}
                 href="#"
               >
@@ -56,7 +56,7 @@ const NavBar = () => {
             </li>
             <li>
               <a
-                className="hover:text-gray-500 font-bold text-lg font-sans text-[#112d42]"
+                className="hover:text-gray-500 font-bold text-md font-sans text-[#112d42]"
                 style={{ color: '#112d42' }}
                 href="#"
               >
@@ -65,7 +65,7 @@ const NavBar = () => {
             </li>
             <li>
               <a
-                className="hover:text-gray-500 font-bold text-lg font-san text-[#112d42]s"
+                className="hover:text-gray-500 font-bold text-md font-san text-[#112d42]s"
                 style={{ color: '#112d42' }}
                 href="/contact"
               >
