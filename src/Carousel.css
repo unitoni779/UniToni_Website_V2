@@ -105,7 +105,7 @@
 .name {
   margin-top: 0.5em;
   margin-bottom: -0.2em;
-  font-size: 1.2em; /* Larger font size for the title */
+  font-size: 1.4em; /* Larger font size for the title */
   font-weight: bold; /* Bold title */
   color: white;
 }
@@ -115,7 +115,7 @@
 .text {
   height: 90%;
   overflow: hidden;
-  font-size: 1em; /* Larger font size for the title */
+  font-size: 1.2em; /* Larger font size for the title */
   text-align: center;
   color: white;
 }
