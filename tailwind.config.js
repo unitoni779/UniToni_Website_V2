@@ -1,6 +1,5 @@
 // tailwind.config.js
 module.exports = {
-
   content: [
     './src/**/*.{js,jsx,ts,tsx}',
   ],
@@ -16,8 +15,8 @@ module.exports = {
         '48': '12rem', // Example custom height
       },
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
-    },
+        sans: ['"GT Eesti"', 'sans-serif'],
+      },
     },
   },
   plugins: [],

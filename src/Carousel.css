@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+@media screen and (max-width: 700px) {
+  .leftCard {
+    display: none;
+  }
+
+  .rightCard {
+    display: none;
+  }
+}
+
+.carousel-container {
+  display: flex;
+  flex-flow: column;
+}
+
+.avatars {
+  border-radius: 50%;
+  height: 100px;
+  margin-top: -6em;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+}
+
+.card {
+  margin: 5em 2em 0em;
+  background-color: #ffcd94;
+  padding: 2em;
+  width: 35%;
+  height: 200px;
+  flex: 1; /* each card is of equal size */
+  box-shadow: 6px 6px 17px 1px rgba(0, 0, 0, 0.36);
+  -webkit-box-shadow: 6px 6px 17px 1px rgba(0, 0, 0, 0.36);
+}
+
+.leftCard {
+  margin-right: -15em;
+  margin-top: 7em;
+}
+
+.rightCard {
+  margin-left: -15em;
+  margin-top: 7em;
+}
+
+.active {
+  z-index: 1;
+  height: 250px;
+
+  background-repeat: no-repeat;
+  background-position-x: 0, right;
+  background-position-y: 0, bottom;
+  background-size: 50px;
+  background-origin: content-box;
+}
+
+/* Styles for the Carousel arrows */
+
+.arrow-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -6em;
+  position: relative;
+ 
+}
+
+.arrow {
+  width: 3em; /* Adjust width as needed */
+  height: 3em; /* Adjust height as needed */
+  fill: hsla(221, 0%, 49%, 0.98); /* Initial arrow color */
+  transition: fill 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smooth transition for fill and transform changes */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.arrow:hover {
+  fill: hsla(221, 0%, 69%, 0.98); /* Lighten the arrow color on hover */
+}
+
+.arrow:active {
+  transform: scale(1.1); /* Scale up the arrow slightly when clicked */
+}
+
+/* Customized styles for different arrows */
+
+.arrow-left {
+  transform: scaleX(1); /* Flip the arrow horizontally for left arrow */
+  margin-left: -30px;
+}
+
+.arrow-right {
+  transform: scaleX(1); /* Flip the arrow horizontally for left arrow */
+  margin-right: -32px;
+}
+
+
+.name {
+  margin-top: 0.5em;
+  margin-bottom: -0.2em;
+  font-size: 1.5em; /* Larger font size for the title */
+  font-weight: bold; /* Bold title */
+}
+
+
+
+.text {
+  height: 90%;
+  overflow: hidden;
+  font-size: 1.2em; /* Larger font size for the title */
+  text-align: center;
+}
+
+.tracker {
+  display: flex;
+  justify-content: center;
+  height: 2.5em;
+  margin-top: 1em;
+}
+
+.circle {
+  transform: scale(0.3);
+}
+
+.viewAll {
+  background-color: white;
+  border: none;
+  border-radius: 25px;
+  height: 2em;
+  width: 20%;
+  font-weight: 500;
+}
+
+.active-circle {
+  background-color: orange;
+  border-radius: 100%;
+  height: 1em;
+  width: 1em;
+  margin: 0 0.5em;
+}
+
+.inactive-circle {
+  background-color: grey;
+  border-radius: 100%;
+  height: 1em;
+  width: 1em;
+  margin: 0 0.5em;
+}

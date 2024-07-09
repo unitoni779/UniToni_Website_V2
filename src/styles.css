@@ -1,6 +1,7 @@
+/* styles.css */
 .bg-custom-image {
   position: relative;
-  background-image: url('./hero2.png');
+  background-image: url('./opacitiy.png');
   background-size: cover;
   background-position: center;
 }
@@ -23,4 +24,17 @@
 
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.highlight {
+  background-color: rgba(255, 154, 36, 1); /* yellow highlight */
+  display: inline-block;
+  padding: 0 4px;
+  border-radius: 2px;
+}
+.highlight2 {
+  background-color: #0087f7; /* yellow highlight */
+  display: inline-block;
+  padding: 0 4px;
+  border-radius: 4px;
 }

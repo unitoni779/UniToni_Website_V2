@@ -85,3 +85,28 @@ html, body {
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+@font-face {
+  font-family: 'GTEesti-Display';
+  src: url('./assets/fonts/GT-Eesti-Display-Regular-Trial.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GTEesti-Display';
+  src: url('./assets/fonts/GT-Eesti-Display-Bold-Trial.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GTEesti-Display';
+  src: url('./assets/fonts/GT-Eesti-Display-Medium-Italic-Trial.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+body {
+  font-family: 'GTEesti-Display', sans-serif;
+}
+

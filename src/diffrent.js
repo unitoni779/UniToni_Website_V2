@@ -1,50 +1,96 @@
 import React from 'react';
-import { AiOutlineBulb, AiOutlineLock, AiOutlineTeam } from 'react-icons/ai';
+import './Carousel.css';
+import { items } from './Data';
+import { ReactComponent as ArrowLeft } from './assets/chevron-left-solid.svg';
+import { ReactComponent as ArrowRight } from './assets/chevron-right-solid.svg';
 
-const Differentiators = () => {
-  return (
+class Carousel extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            leftCard: 0,
+            activeIndex: 0,
+            rightCard: 0,
+            arrayLength: items.length
+        };
+        this.activatePreviousSlide = this.activatePreviousSlide.bind(this);
+        this.activateNextSlide = this.activateNextSlide.bind(this);
+    }
 
-      <div className="bg-white rounded-lg p-8 mb-4">
-        <h2 className="text-4xl font-bold mb-8 text-center font-sans" style={{ fontFamily: 'Poppins, sans-serif' }}>
-          What Differentiates Us?
-        </h2>
-        <div className="grid gap-8 md:grid-cols-3">
-          {/* Smart */}
-          <div className="text-left bg-orange-500 text-white rounded-lg p-8 h-full" style={{backgroundColor:"#0087f7"}}>
-            <AiOutlineBulb className="text-5xl mb-6" />
-            <h3 className="text-2xl font-semibold mb-4 font-sans" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              Smart
-            </h3>
-            <p className="text-lg text-gray-200 font-sans leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              Plan your time and stay updated with your courses and assignments with the help of our artificial intelligence (AI) chat bot.
-            </p>
-          </div>
+    componentDidMount() {
+        items.forEach((item, index) => {
+            if (item.status === 'active') {
+                this.setState({
+                    leftCard: (index - 1 + items.length) % items.length,
+                    activeIndex: index,
+                    rightCard: (index + 1) % items.length,
+                });
+            }
+        });
+    }
 
-          {/* Secure */}
-          <div className="text-left bg-blue-500 text-white rounded-lg p-8 h-full" style={{backgroundColor:"#ff9a24"}}>
-            <AiOutlineLock className="text-5xl mb-6" />
-            <h3 className="text-2xl font-semibold mb-4 font-sans" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              Secure
-            </h3>
-            <p className="text-lg text-gray-200 font-sans leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              Your data is processed securely on our servers, with strict protocols to safeguard your privacy.
-            </p>
-          </div>
+    activatePreviousSlide() {
+        this.setState(prevState => ({
+            leftCard: (prevState.leftCard - 1 + prevState.arrayLength) % prevState.arrayLength,
+            activeIndex: (prevState.activeIndex - 1 + prevState.arrayLength) % prevState.arrayLength,
+            rightCard: prevState.activeIndex,
+        }));
+    }
 
-          {/* Engaging */}
-          <div className="text-left bg-blue-400 text-white rounded-lg p-8 h-full" style={{backgroundColor:"#0087f7"}}>
-            <AiOutlineTeam className="text-5xl mb-6" />
-            <h3 className="text-2xl font-semibold mb-4 font-sans" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              Engaging
-            </h3>
-            <p className="text-lg text-gray-200 font-sans leading-relaxed" style={{ fontFamily: 'Poppins, sans-serif' }}>
-              Create and join university-specific social networks and participate in vibrant academic and social communities.
-            </p>
-          </div>
-        </div>
-      </div>
+    activateNextSlide() {
+        this.setState(prevState => ({
+            leftCard: prevState.activeIndex,
+            activeIndex: (prevState.activeIndex + 1) % prevState.arrayLength,
+            rightCard: (prevState.rightCard + 1) % prevState.arrayLength,
+        }));
+    }
 
-  );
-};
+    render() {
+        const { leftCard, activeIndex, rightCard, arrayLength } = this.state;
 
-export default Differentiators;
+        return (
+            <div className="carousel-container">
+                <h2 className="text-center text-4xl font-bold text-gray-900 mb-0" style={{ color: "#112d42" }}>
+                    What differentiates us?
+                </h2>
+                <div className="cards">
+                    <div className="card leftCard">
+                        <img className="avatars" src={items[leftCard].image} alt="avatar"></img>
+                        <div className="text">
+                            <h3 className="name text-[#112d42]">{items[leftCard].name}</h3>
+                            <i className="position text-[#112d42]">{items[leftCard].position}</i>
+                            <p className="testimony text-[#112d42]">{items[leftCard].quote}</p>
+                        </div>
+                    </div>
+                    <div className="card active">
+                        <img className="avatars" src={items[activeIndex].image} alt="avatar"></img>
+                        <div className="text text-[#112d42]">
+                            <h3 className="name text-[#112d42]">{items[activeIndex].name}</h3>
+                            <i className="position text-[#112d42]">{items[activeIndex].position}</i>
+                            <p className="testimony text-[#112d42]">{items[activeIndex].quote}</p>
+                        </div>
+                        <div className="arrow-container">
+                            <ArrowLeft className="arrow arrow-left" onClick={this.activatePreviousSlide} />
+                            <ArrowRight className="arrow arrow-right" onClick={this.activateNextSlide} />
+                        </div>
+                    </div>
+                    <div className="card rightCard">
+                        <img className="avatars" src={items[rightCard].image} alt="avatar"></img>
+                        <div className="text text-[#112d42]">
+                            <h3 className="name text-[#112d42]">{items[rightCard].name}</h3>
+                            <i className="position text-[#112d42]">{items[rightCard].position}</i>
+                            <p className="testimony text-[#112d42]">{items[rightCard].quote}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="tracker">
+                    {Array.from({ length: arrayLength }).map((_, index) => (
+                        <div key={index} className={index === activeIndex ? 'active-circle' : 'inactive-circle'}></div>
+                    ))}
+                </div>
+            </div>
+        );
+    }
+}
+
+export default Carousel;
