@@ -181,22 +181,23 @@ const Navbar = () => {
                             <a href="#"
                                 className="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-yellow-400 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
                         </li>
-                                   <Link
-              to="/demo"
-               className="inline-flex items-center px-4 py-2 text-sm font-semibold text-white transition-all duration-200 bg-yellow-400 rounded-full shadow-lg hover:bg-yellow-500 focus:bg-yellow-500 font-sans"
-               style={{ backgroundColor: "rgba(0, 135, 247, 0.6)" }}
-             >
-              BOOK DEMO
-             </Link>
-
-             <Link
-               to="/contact"
-               className="text-xl font-bold text-gray-600 hover:text-black transition-all duration-200 font-sans"
-               style={{ color: '#ff9a24' }}
-             >
-               LOGIN
-             </Link>
                     </ul>
+                    <div className="flex items-center mt-4 space-x-4 lg:mt-0 " style={{marginLeft:"100px"}}>
+                        <Link
+                            to="/demo"
+                            className="inline-flex items-center px-4 py-2 text-sm font-semibold text-white transition-all duration-200 bg-yellow-400 rounded-full shadow-lg hover:bg-yellow-500 focus:bg-yellow-500 font-sans"
+                            style={{ backgroundColor: "rgba(0, 135, 247, 0.6)" }}
+                        >
+                            BOOK DEMO
+                        </Link>
+                        <Link
+                            to="/contact"
+                            className="text-xl font-bold text-gray-600 hover:text-black transition-all duration-200 font-sans"
+                            style={{ color: '#ff9a24' }}
+                        >
+                            LOGIN
+                        </Link>
+                    </div>
                 </div>
             </div>
         </nav>
