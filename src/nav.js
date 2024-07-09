@@ -83,13 +83,14 @@ const NavBar = () => {
             <IoLanguage className="text-2xl" />
             <span className="ml-1 font-sans">{language.toUpperCase()}</span>
           </button>
-          <Link
-            to="/demo"
-            className="inline-flex items-center px-5 py-2 text-xl font-semibold text-white transition-all duration-200 bg-yellow-400 rounded-full shadow-lg hover:bg-yellow-500 focus:bg-yellow-500 font-sans"
-            style={{  backgroundColor: "rgba(0, 135, 247, 0.6)" }}
-          >
-            BOOK DEMO
-          </Link>
+        <Link
+  to="/demo"
+  className="inline-flex items-center px-3 py-1.5 text-sm font-semibold text-white transition-all duration-200 bg-yellow-400 rounded-full shadow-lg hover:bg-yellow-500 focus:bg-yellow-500 font-sans"
+  style={{ backgroundColor: "rgba(0, 135, 247, 0.6)" }}
+>
+  BOOK DEMO
+</Link>
+
           <Link
             to="/contact"
             className="text-xl font-bold text-gray-600 hover:text-black transition-all duration-200 font-sans"
