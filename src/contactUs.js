@@ -66,9 +66,9 @@ const Contact = () => {
     switch (selectedOption) {
       case 'tech-support':
         return (
-          <form onSubmit={handleSubmit} action="/submit-contact-form" method="post">
+          <form onSubmit={handleSubmit} action="/submit-contact-form" method="post" className='font-figtree'>
             <div className="mb-8">
-              <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+              <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2 " style={{ color: "#112d42" }}>
                 Country <span className="text-red-600">*</span>
               </label>
               <select
@@ -86,7 +86,7 @@ const Contact = () => {
               </select>
             </div>
 
-            <div className="mb-8 flex">
+            <div className="mb-8 flex font-figtree">
               <div className="mr-4">
                 <label htmlFor="first-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                   First Name <span className="text-red-600">*</span>
@@ -111,7 +111,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="mb-8">
+            <div className="mb-8 font-figtree">
               <label htmlFor="phone" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                 Phone <span className="text-red-600">*</span>
               </label>
@@ -122,20 +122,20 @@ const Contact = () => {
                 onChange={handleInputChange}
               />
             </div>
-            <div className="mb-6">
+            <div className="mb-6 font-figtree">
                   <input type="checkbox" id="subscribe" className="h-6 w-6 mr-2" />
                   <label htmlFor="subscribe" className="text-lg text-gray-700" style={{ color: "#112d42" }}>
                     Yes, please send me informative content about education topics, products, services, and events. I know that I may unsubscribe at any time.
                   </label>
                 </div>
 
-                <div className="mb-8">
+                <div className="mb-8 font-figtree">
                   <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
                     By filling out this form, you consent to sharing your data with itslearning. itslearning respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.
                   </label>
                 </div>
 
-            <div className="mb-8">
+            <div className="mb-8" font-figtree>
               <label htmlFor="work-email" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                 Work Email <span className="text-red-600">*</span>
               </label>
@@ -160,7 +160,7 @@ const Contact = () => {
       case 'lms':
         return (
             <form onSubmit={handleSubmit} action="/submit-contact-form" method="post">
-            <div className="mb-8">
+            <div className="mb-8 font-figtree" >
               <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                 Country <span className="text-red-600">*</span>
               </label>
@@ -179,7 +179,7 @@ const Contact = () => {
               </select>
             </div>
 
-            <div className="mb-8 flex">
+            <div className="mb-8 flex font-figtree">
               <div className="mr-4">
                 <label htmlFor="first-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                   First Name <span className="text-red-600">*</span>
@@ -342,7 +342,7 @@ const Contact = () => {
 
   case 'other':
     return (
-        <form onSubmit={handleSubmit} action="/submit-contact-form" method="post">
+        <form onSubmit={handleSubmit} action="/submit-contact-form" method="post" className='font-figtree'>
         <div className="mb-8">
           <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
             Country <span className="text-red-600">*</span>
@@ -436,7 +436,7 @@ const Contact = () => {
     }
   };
   return (
-    <section className="py-24 font-sans">
+    <section className="py-24 font-figtree">
     <div className="mx-auto max-w-9xl px-4 sm:px-6 lg:px-8">
       <h1 className="text-5xl font-bold mb-8 text-center" style={{ color: "#112d42",marginTop:"80px" }}>Contact Us</h1>
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-32"style={{gap:"50px"}}>
@@ -449,7 +449,7 @@ const Contact = () => {
             <h2 className="text-gray-900 font-manrope text-4xl font-semibold leading-10 mb-9 lg:text-left text-center" style={{ color: "#112d42" }}>
               How can we help?
             </h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='font-figtree'>
               <div className="mb-8">
                 <label htmlFor="options" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                   Choose an option <span className="text-red-600">*</span>

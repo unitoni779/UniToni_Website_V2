@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import demo from './demo2.png';
+import logo from './logo.png';
 
 const Demo = () => {
   const [countries, setCountries] = useState([]);
@@ -26,7 +27,7 @@ const Demo = () => {
   };
 
   return (
-    <section className="py-24 font-sans">
+    <section className="py-24 font-figtree">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-32">
           <div className="lg:max-w-xl w-full h-[700px] flex items-center justify-center bg-cover bg-no-repeat" style={{ backgroundImage: `url(${demo})`, backgroundPosition: '-90px center' }}>
@@ -36,7 +37,7 @@ const Demo = () => {
             <div>
               <h4 className="text-indigo-600 text-base font-medium leading-6 mb-4 lg:text-left text-center"></h4>
               <h2 className="text-gray-900 font-manrope text-4xl font-semibold leading-10 mb-9 lg:text-left text-center" style={{ color: "#112d42" }}>
-                Get a live demo of <span style={{ color: "#0087f7" }}>Uni</span><span style={{ color: "#ff9a24" }}>Toni</span>
+                Get a live demo of <img src={logo} style={{width:"200px"}}/>
               </h2>
               <form action="/submit-contact-form" method="post">
                 <div className="mb-8">
