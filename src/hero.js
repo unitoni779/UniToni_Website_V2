@@ -21,7 +21,7 @@ const ShuffleHero = () => {
                                     width: '2000px', // Ensure it does not exceed the container's width
                                     height: 'auto', // Maintain aspect ratio
                                     marginLeft: "100px",
-                                    marginBottom: "200px"
+                                    marginBottom: "400px"
                                 }}
                             />
                         </div>
@@ -40,7 +40,7 @@ const ShuffleHero = () => {
                                     </p>
                                     <Link
     to="/demo"
-    className="inline-flex items-center px-6 py-5 text-xl font-semibold text-white transition-all duration-200 shadow-lg hover:bg-yellow-500 focus:bg-yellow-500 mt-8 rounded-full"
+    className="inline-flex items-center px-5 py-4 text-xl font-semibold text-white transition-all duration-200 shadow-lg hover:bg-yellow-500 focus:bg-yellow-500 mt-8 rounded-full"
     style={{
         backgroundColor: "rgba(0, 135, 247, 0.6)",
         marginTop: "70px",
