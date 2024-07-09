@@ -3,10 +3,10 @@ import logo from './Adsız tasarım.png';
 
 const Footer = () => {
     return (
-        <footer class="w-full bg-white">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <footer class="w-full bg-white font-figtree">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 font-figtree">
           
-            <div class="py-16 flex justify-between items-center flex-col gap-8 lg:flex-row">
+            <div class="py-16 flex justify-between items-center flex-col gap-8 lg:flex-row font-figtree">
                 <a href="https://pagedone.io/"  class="flex justify-center ">
                  <img src={logo}  style={{width:"200px"}}/>
                         

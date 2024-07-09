@@ -48,7 +48,7 @@ class Carousel extends React.Component {
         const { leftCard, activeIndex, rightCard, arrayLength } = this.state;
 
         return (
-            <div className="carousel-container">
+            <div className="carousel-container font-figtree">
                 <h2 className="text-center text-4xl font-bold text-gray-900 mb-0" style={{ color: "#112d42" }}>
                     What differentiates us?
                 </h2>

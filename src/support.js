@@ -50,9 +50,9 @@ function SupportersSection() {
   ];
 
   return (
-    <div className="bg-white-100 py-10" style={{ fontFamily: "'GT Eesti Display', sans-serif", maxHeight: "300px" }}>
+    <div className="bg-white-100 py-10 font-figtree" style={{  maxHeight: "300px" }}>
 
-      <h2 className="text-center text-4xl font-bold text-gray-900 mb-12" style={{ color: "#112d42" }}>
+      <h2 className="text-center text-4xl font-bold text-gray-900 mb-12 font-figtree" style={{ color: "#112d42" }}>
         We are proud to be supported by:
       </h2>
 

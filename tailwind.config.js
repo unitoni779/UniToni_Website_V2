@@ -15,7 +15,7 @@ module.exports = {
         '48': '12rem', // Example custom height
       },
       fontFamily: {
-        sans: ['"GT Eesti"', 'sans-serif'],
+        'figtree': ['Figtree', 'sans-serif'],
       },
     },
   },
