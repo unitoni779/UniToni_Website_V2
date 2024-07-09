@@ -28,7 +28,7 @@
 
 .card {
   margin: 5em 2em 0em;
-  background-color: #ffcd94;
+  background-color: #0087f7;
   padding: 2em;
   width: 35%;
   height: 200px;
@@ -67,6 +67,11 @@
   position: relative;
  
 }
+.arrow-icon {
+  color: white;
+  font-size: 3rem; /* Adjust size as needed */
+  margin: 0 -30px; /* Increase margin to create more space between arrows */
+}
 
 .arrow {
   width: 3em; /* Adjust width as needed */
@@ -102,6 +107,7 @@
   margin-bottom: -0.2em;
   font-size: 1.5em; /* Larger font size for the title */
   font-weight: bold; /* Bold title */
+  color: white;
 }
 
 
@@ -111,6 +117,7 @@
   overflow: hidden;
   font-size: 1.2em; /* Larger font size for the title */
   text-align: center;
+  color: white;
 }
 
 .tracker {
@@ -134,7 +141,7 @@
 }
 
 .active-circle {
-  background-color: orange;
+  background-color: rgb(15, 15, 100);
   border-radius: 100%;
   height: 1em;
   width: 1em;
@@ -147,4 +154,7 @@
   height: 1em;
   width: 1em;
   margin: 0 0.5em;
+}
+.testimony{
+margin-bottom: 100px;
 }

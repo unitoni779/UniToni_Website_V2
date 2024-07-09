@@ -1,8 +1,7 @@
 import React from 'react';
 import './Carousel.css';
 import { items } from './Data';
-import { ReactComponent as ArrowLeft } from './assets/chevron-left-solid.svg';
-import { ReactComponent as ArrowRight } from './assets/chevron-right-solid.svg';
+import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
 class Carousel extends React.Component {
     constructor() {
@@ -53,33 +52,34 @@ class Carousel extends React.Component {
                 <h2 className="text-center text-4xl font-bold text-gray-900 mb-0" style={{ color: "#112d42" }}>
                     What differentiates us?
                 </h2>
-                <div className="cards">
-                    <div className="card leftCard">
-                        <img className="avatars" src={items[leftCard].image} alt="avatar"></img>
+                <div className="cards" >
+                    <div className="card leftCard" >
+                        {/* <img className="avatars" src={items[leftCard].image} alt="avatar"></img> */}
                         <div className="text">
-                            <h3 className="name text-[#112d42]">{items[leftCard].name}</h3>
-                            <i className="position text-[#112d42]">{items[leftCard].position}</i>
-                            <p className="testimony text-[#112d42]">{items[leftCard].quote}</p>
+                            <h3 className="name text-white">{items[leftCard].name}</h3>
+                            <i className="position text-white mt-5" >{items[leftCard].position}</i>
+                            <p className="testimony text-white mt-5 ">{items[rightCard].quote}</p>
+                            <p className="testimony text-white mt-5 ">{items[leftCard].quote}</p>
                         </div>
                     </div>
                     <div className="card active">
-                        <img className="avatars" src={items[activeIndex].image} alt="avatar"></img>
-                        <div className="text text-[#112d42]">
-                            <h3 className="name text-[#112d42]">{items[activeIndex].name}</h3>
-                            <i className="position text-[#112d42]">{items[activeIndex].position}</i>
-                            <p className="testimony text-[#112d42]">{items[activeIndex].quote}</p>
+                        {/* <img className="avatars" src={items[activeIndex].image} alt="avatar"></img> */}
+                        <div className="text text-white">
+                            <h3 className="name text-white">{items[activeIndex].name}</h3>
+                            <i className="position text-white">{items[activeIndex].position}</i>
+                            <p className="testimony text-white mt-5">{items[activeIndex].quote}</p>
                         </div>
                         <div className="arrow-container">
-                            <ArrowLeft className="arrow arrow-left" onClick={this.activatePreviousSlide} />
-                            <ArrowRight className="arrow arrow-right" onClick={this.activateNextSlide} />
+                            <BiChevronLeft className="arrow-icon" onClick={this.activatePreviousSlide} />
+                            <BiChevronRight className="arrow-icon" onClick={this.activateNextSlide} />
                         </div>
                     </div>
                     <div className="card rightCard">
-                        <img className="avatars" src={items[rightCard].image} alt="avatar"></img>
-                        <div className="text text-[#112d42]">
-                            <h3 className="name text-[#112d42]">{items[rightCard].name}</h3>
-                            <i className="position text-[#112d42]">{items[rightCard].position}</i>
-                            <p className="testimony text-[#112d42]">{items[rightCard].quote}</p>
+                        {/* <img className="avatars" src={items[rightCard].image} alt="avatar"></img> */}
+                        <div className="text text-white">
+                            <h3 className="name text-white">{items[rightCard].name}</h3>
+                            <i className="position text-white">{items[rightCard].position}</i>
+                            <p className="testimony text-white mt-5">{items[rightCard].quote}</p>
                         </div>
                     </div>
                 </div>

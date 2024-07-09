@@ -53,7 +53,7 @@ function SupportersSection() {
     <div className="bg-white-100 py-10" style={{ fontFamily: "'GT Eesti Display', sans-serif", maxHeight: "300px" }}>
 
       <h2 className="text-center text-4xl font-bold text-gray-900 mb-12" style={{ color: "#112d42" }}>
-        We are proud to be supported by :
+        We are proud to be supported by:
       </h2>
 
       <div className="looper" ref={outerRef}>
@@ -65,10 +65,10 @@ function SupportersSection() {
                   <img
                     src={supporter.imageUrl}
                     alt={supporter.name}
-                    className="max-h-24 max-w-full object-contain rounded-lg transform transition duration-300 group-hover:scale-110 group-hover:shadow-lg"
+                    className="max-h-24 max-w-full object-contain rounded-lg transform transition duration-300 :scale-110 :shadow-lg"
                   />
-                  <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-300 bg-black bg-opacity-50 rounded-lg">
-                    <p className="text-white text-lg font-semibold text-center">{supporter.name}</p>
+                  <div className="absolute inset-0 flex justify-center items-center opacity-0 :opacity-100 transition duration-300 bg-black bg-opacity-50 rounded-lg">
+                 
                   </div>
                 </div>
               ))}
