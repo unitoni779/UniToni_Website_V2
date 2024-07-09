@@ -21,7 +21,7 @@ const ShuffleHero = () => {
                                     width: '2000px', // Ensure it does not exceed the container's width
                                     height: 'auto', // Maintain aspect ratio
                                     marginLeft: "100px",
-                                    marginBottom: "400px"
+                                    marginBottom: "300px"
                                 }}
                             />
                         </div>
@@ -31,7 +31,7 @@ const ShuffleHero = () => {
                         <div className="h-full px-4 pt-24 pb-16 sm:px-6 lg:px-24 2xl:px-22 lg:pt-40 lg:pb-14">
                             <div className="flex flex-col justify-between flex-1 h-full">
                                 <div>
-                                    <h1 className="text-4xl font-bold sm:text-6xl xl:text-7xl leading-tight text-[#112d42]">
+                                    <h1 className="text-4xl font-bold sm:text-5xl xl:text-7xl leading-tight text-[#112d42]">
                                         The Future of Education is <span className="text-[#ff9a24]">Here</span>
                                     </h1>
 
