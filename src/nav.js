@@ -17,13 +17,14 @@ const Navbar = () => {
           <img src={logo} className="h-8" alt="Flowbite Logo" />
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <a
-            href="#"
-            className="hidden md:inline-block text-black hover:text-blue-800 focus:outline-none font-bold text-md mr-7 cursor-pointer mt-2"
-            style={{ color: "#ff9a24" }}
-          >
-            Login
-          </a>
+        <a
+          href="https://unitoni.com/student"
+          className="hidden md:inline-block text-black hover:text-blue-800 focus:outline-none font-bold text-md mr-7 cursor-pointer mt-2"
+          style={{ color: "#ff9a24" }}
+      >
+          Login
+      </a>
+
 
           <Link to="/demo">
           <button

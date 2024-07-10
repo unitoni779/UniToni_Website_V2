@@ -30,9 +30,12 @@ const ShuffleHero = () => {
                         </div>
                     </div>
                     <div className="mt-4 flex justify-center sm:justify-start gap-3">
-                        <img className="h-16 w-auto sm:h-24 sm:w-auto lg:h-32 lg:w-auto object-cover" src={app} alt="App Button" style={{ width: "200px" }} />
-                        <img className="h-16 w-auto sm:h-24 sm:w-auto lg:h-32 lg:w-auto object-cover" src={google} alt="Google Button" style={{ width: "200px" }} />
-                    </div>
+                         <a href="https://apps.apple.com/tr/app/unitoni/id1603632698" target="_blank" rel="noopener noreferrer">
+                            <img className="h-16 w-auto sm:h-24 sm:w-auto lg:h-32 lg:w-auto object-cover" src={app} alt="App Button" style={{ width: "200px" }} />
+                        </a>
+<a href="https://play.google.com/store/apps/details?id=com.UniToni.unis&hl=en" target="_blank" rel="noopener noreferrer">
+                            <img className="h-16 w-auto sm:h-24 sm:w-auto lg:h-32 lg:w-auto object-cover" src={google} alt="Google Button" style={{ width: "200px" }} />
+                        </a>                    </div>
                 </div>
                 <div className="lg:inset-y-0 lg:right-0 lg:w-2/3 my-4">
                     <img className="h-94 sm:h-80 md:h-96 lg:h-96 w-full object-cover lg:w-auto lg:w-116 mr-4" src={tasarim} alt="Hero Image" />
