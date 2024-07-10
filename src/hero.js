@@ -1,5 +1,5 @@
 import React from 'react';
-import tasarim from './heroo.png';
+import tasarim from './freepik-new-project-20240710002811vXlb.png';
 import app from './app2.png';
 import google from './google.png';
 import { Link } from 'react-router-dom';
@@ -38,7 +38,7 @@ const ShuffleHero = () => {
                     </div>
                 </div>
 
-                <div className="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
+                <div className="lg:inset-y-0 lg:right-0 lg:w-2/2 my-4">
                     <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src={tasarim} alt="Hero Image" />
                 </div>
             </div>
