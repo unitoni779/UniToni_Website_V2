@@ -38,8 +38,8 @@ const ShuffleHero = () => {
                     </div>
                 </div>
 
-                <div className="lg:inset-y-0 lg:right-0 lg:w-2/2 my-4">
-                    <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src={tasarim} alt="Hero Image" />
+                <div className="lg:inset-y-0 lg:right-0 lg:w-2/3 my-4 ">
+                    <img className="h-56 w-full object-cover sm:h-32 md:h-66 lg:w-full lg:h-88" src={tasarim} alt="Hero Image" />
                 </div>
             </div>
         </section>
