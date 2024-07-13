@@ -49,25 +49,22 @@ class Carousel extends React.Component {
 
         return (
             <div className="carousel-container font-figtree">
-                <h2 className="text-center text-4xl font-bold text-gray-900 " style={{ color: "#112d42",marginTop:"150px" }}>
+                <h2 className="text-center text-4xl font-bold text-gray-900" style={{ color: "#112d42", marginTop: "150px" }}>
                     What differentiates us?
                 </h2>
-                <div className="cards" >
-                    <div className="card leftCard" >
-                        {/* <img className="avatars" src={items[leftCard].image} alt="avatar"></img> */}
+                <div className="cards">
+                    <div className="card leftCard">
                         <div className="text">
                             <h3 className="name text-white">{items[leftCard].name}</h3>
-                            <i className="position text-white mt-5" >{items[leftCard].position}</i>
-                            <p className="testimony text-white mt-5 ">{items[rightCard].quote}</p>
-                            <p className="testimony text-white mt-5 ">{items[leftCard].quote}</p>
+                            <i className="position text-white mt-2">{items[leftCard].position}</i>
+                            <p className="testimony text-white mt-2 sm:text-lg md:text-xl">{items[leftCard].quote}</p>
                         </div>
                     </div>
                     <div className="card active">
-                        {/* <img className="avatars" src={items[activeIndex].image} alt="avatar"></img> */}
                         <div className="text text-white">
                             <h3 className="name text-white">{items[activeIndex].name}</h3>
                             <i className="position text-white">{items[activeIndex].position}</i>
-                            <p className="testimony text-white mt-5">{items[activeIndex].quote}</p>
+                            <p className="testimony text-white mt-2 sm:text-lg md:text-xl">{items[activeIndex].quote}</p>
                         </div>
                         <div className="arrow-container">
                             <BiChevronLeft className="arrow-icon" onClick={this.activatePreviousSlide} />
@@ -75,11 +72,10 @@ class Carousel extends React.Component {
                         </div>
                     </div>
                     <div className="card rightCard">
-                        {/* <img className="avatars" src={items[rightCard].image} alt="avatar"></img> */}
                         <div className="text text-white">
                             <h3 className="name text-white">{items[rightCard].name}</h3>
                             <i className="position text-white">{items[rightCard].position}</i>
-                            <p className="testimony text-white mt-5">{items[rightCard].quote}</p>
+                            <p className="testimony text-white mt-2 sm:text-lg md:text-xl">{items[rightCard].quote}</p>
                         </div>
                     </div>
                 </div>

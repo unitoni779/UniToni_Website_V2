@@ -9,12 +9,21 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const scrollToHero = () => {
+    const supportersSection = document.getElementById('hero');
+    if (supportersSection) {
+      window.scrollTo({
+        top: supportersSection.offsetTop - 0, // Adjust as needed for your navbar height or other offsets
+        behavior: 'smooth',
+      });
+    }
+  };
 
   const scrollToSupporters = () => {
     const supportersSection = document.getElementById('supporters');
     if (supportersSection) {
       window.scrollTo({
-        top: supportersSection.offsetTop - 70, // Adjust as needed for your navbar height or other offsets
+        top: supportersSection.offsetTop - 350, // Adjust as needed for your navbar height or other offsets
         behavior: 'smooth',
       });
     }
@@ -33,8 +42,8 @@ const Navbar = () => {
   return (
     <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 font-figtree">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4 relative">
-        <a href="https://flowbite.com/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src={logo} className="h-8" alt="Flowbite Logo" />
+        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src={logo} className="h-8" alt=" Logo" />
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <Link to="/demo">
@@ -74,7 +83,7 @@ const Navbar = () => {
         >
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900">
             <li>
-              <Link to="/"  className="block py-2 px-3 text-[#112d42] rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-bold" style={{ color: "#112d42" }}>
+              <Link to="/"  onClick={scrollToHero} className="block py-2 px-3 text-[#112d42] rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent font-bold" style={{ color: "#112d42" }}>
                 Home
               </Link>
             </li>

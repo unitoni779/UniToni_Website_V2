@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import demo from './contact.png';
+import Footer from './footer';
 
 const Contact = () => {
   const [countries, setCountries] = useState([]);
@@ -66,7 +67,7 @@ const Contact = () => {
     switch (selectedOption) {
       case 'tech-support':
         return (
-          <form onSubmit={handleSubmit} action="/submit-contact-form" method="post" className='font-figtree'>
+          <form onSubmit={handleSubmit} action="mailto:contact@unitoni.com" method="post" className='font-figtree'>
             <div className="mb-8">
               <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2 " style={{ color: "#112d42" }}>
                 Country <span className="text-red-600">*</span>
@@ -131,8 +132,7 @@ const Contact = () => {
 
                 <div className="mb-8 font-figtree">
                   <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
-                    By filling out this form, you consent to sharing your data with itslearning. itslearning respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.
-                  </label>
+                  By filling out this form, you consent to sharing your contact info with UniToni. UniToni respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.                  </label>
                 </div>
 
             <div className="mb-8" font-figtree>
@@ -159,7 +159,7 @@ const Contact = () => {
         );
       case 'lms':
         return (
-            <form onSubmit={handleSubmit} action="/submit-contact-form" method="post">
+            <form onSubmit={handleSubmit} action="mailto:contact@unitoni.com" method="post">
             <div className="mb-8 font-figtree" >
               <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                 Country <span className="text-red-600">*</span>
@@ -236,7 +236,8 @@ const Contact = () => {
 
                 <div className="mb-8">
                   <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
-                    By filling out this form, you consent to sharing your data with itslearning. itslearning respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.
+                  By filling out this form, you consent to sharing your contact info with UniToni. UniToni respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy
+
                   </label>
                 </div>
             <button
@@ -250,7 +251,7 @@ const Contact = () => {
         );
       case 'partner-info':
         return (
-            <form onSubmit={handleSubmit} action="/submit-contact-form" method="post">
+            <form onSubmit={handleSubmit} action="mailto:contact@unitoni.com" method="post">
             <div className="mb-8">
               <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                 Country <span className="text-red-600">*</span>
@@ -327,8 +328,8 @@ const Contact = () => {
 
                 <div className="mb-8">
                   <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
-                    By filling out this form, you consent to sharing your data with itslearning. itslearning respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.
-                  </label>
+                  By filling out this form, you consent to sharing your contact info with UniToni. UniToni respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.                  </label>
+               
                 </div>
             <button
               type="submit"
@@ -342,7 +343,7 @@ const Contact = () => {
 
   case 'other':
     return (
-        <form onSubmit={handleSubmit} action="/submit-contact-form" method="post" className='font-figtree'>
+        <form onSubmit={handleSubmit} action="mailto:contact@unitoni.com"method="post" className='font-figtree'>
         <div className="mb-8">
           <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
             Country <span className="text-red-600">*</span>
@@ -419,8 +420,8 @@ const Contact = () => {
 
                 <div className="mb-8">
                   <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
-                    By filling out this form, you consent to sharing your data with itslearning. itslearning respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.
-                  </label>
+                  By filling out this form, you consent to sharing your contact info with UniToni. UniToni respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.                  </label>
+
                 </div>
         <button
           type="submit"
@@ -436,6 +437,8 @@ const Contact = () => {
     }
   };
   return (
+    <>
+  
     <section className="py-24 font-figtree">
     <div className="mx-auto max-w-9xl px-4 sm:px-6 lg:px-8">
       <h1 className="text-5xl font-bold mb-8 text-center" style={{ color: "#112d42",marginTop:"80px" }}>Contact Us</h1>
@@ -475,7 +478,8 @@ const Contact = () => {
       </div>
     </div>
   </section>
-  
+  <Footer/>
+  </>
   );
 };
 

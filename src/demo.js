@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import demo from './demo2.png';
 import logo from './logo.png';
+import Footer from './footer'
 
 const Demo = () => {
   const [countries, setCountries] = useState([]);
@@ -27,6 +28,7 @@ const Demo = () => {
   };
 
   return (
+    <>
     <section className="py-24 font-figtree">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-32">
@@ -37,9 +39,9 @@ const Demo = () => {
             <div>
               <h4 className="text-indigo-600 text-base font-medium leading-6 mb-4 lg:text-left text-center"></h4>
               <h2 className="text-gray-900 font-manrope text-4xl font-semibold leading-10 mb-9 lg:text-left text-center" style={{ color: "#112d42" }}>
-                Get a live demo of <img src={logo} style={{width:"200px"}}/>
+                Get a live demo of <span style={{color:"#0087f7"}}>Uni</span><span style={{color:"#ff9a24 "}}>Toni</span>
               </h2>
-              <form action="/submit-contact-form" method="post">
+              <form action="mailto:demo@unitoni.com" method="post">
                 <div className="mb-8">
                   <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                     Country <span className="text-red-600">*</span>
@@ -67,7 +69,7 @@ const Demo = () => {
                     <input
                       type="text"
                       id="first-name"
-                      className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+                      className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-8"
                     />
                   </div>
                   <div>
@@ -77,7 +79,7 @@ const Demo = () => {
                     <input
                       type="text"
                       id="last-name"
-                      className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+                      className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-8"
                     />
                   </div>
                 </div>
@@ -113,8 +115,7 @@ const Demo = () => {
 
                 <div className="mb-8">
                   <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
-                    By filling out this form, you consent to sharing your data with itslearning. itslearning respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.
-                  </label>
+                  By filling out this form, you consent to sharing your contact info with UniToni. UniToni respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.                  </label>
                 </div>
 
                 <button
@@ -130,7 +131,11 @@ const Demo = () => {
           </div>
         </div>
       </div>
+     
     </section>
+     <Footer />
+    </>
+    
   );
 };
 
