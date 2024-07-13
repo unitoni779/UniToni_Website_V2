@@ -1,9 +1,32 @@
 import React from 'react';
-import logo from './Adsız tasarım.png';
+import logo from './Adsız tasarım.png'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-    return (
-        <footer class="w-full bg-white font-figtree">
+  return (
+    <>
+      <div className="bg-yellow-100 py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+            <h2 className="text-3xl font-extrabold text-center text-[#112d42] mb-4 font-figtree" style={{color:"#112d42"}}>LIKE WHAT YOU SEE?</h2>
+            <p className="text-xl text-[#112d42] text-center  font-figtree" style={{color:"#112d42"}}>
+              Discover the full potential of UniToni and unlock a world of incredible tools within our innovative platform, giving universities the valuable gift of more time to focus on developing.
+            </p>
+            <div className="flex justify-center">
+  <Link to="/demo">
+    <a
+      className="flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-white bg-gray-800 hover:bg-gray-600 md:py-4 md:text-lg md:px-10 mt-8 font-figtree"
+      style={{ backgroundColor: "#0087f7", opacity: "0.9", width: "300px" }}
+    >
+      Book Demo
+    </a>
+  </Link>
+</div>
+
+        
+        </div>
+      </div>
+      <footer class="w-full bg-white font-figtree">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 font-figtree">
           
             <div class="py-16 flex justify-between items-center flex-col gap-8 lg:flex-row font-figtree">
@@ -53,8 +76,9 @@ const Footer = () => {
             </div>
         </div>
     </footer>
-                                            
-    );
+              
+    </>
+  );
 };
 
 export default Footer;

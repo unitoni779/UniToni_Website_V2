@@ -11,9 +11,7 @@ const IntegratedLearningTools = () => {
   return (
     <section className="bg-gradient-to-b from-white to-white py-16 font-figtree" style={{marginRight:"100px",marginLeft:"100px"}}>
   
-        <h2 className="text-center text-4xl font-bold text-gray-900 mb-12"style={{color:"#112d42"}}>
-          Integrated Learning Tools
-        </h2>
+       
         <div className="flex flex-col md:flex-row md:space-x-8 items-center justify-center">
       
           <div className="flex flex-col items-center text-center mb-12 md:mb-0">
