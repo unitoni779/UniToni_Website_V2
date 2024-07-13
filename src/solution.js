@@ -9,8 +9,8 @@ const TestimonialSection = () => {
         <figure className="max-w-screen-md mx-auto">
           <blockquote>
             <p className="text-3xl lg:text-4xl font-bold text-white dark:text-white font-sans leading-relaxed font-figtree ">
-            <span className="highlight font-figtree" style={{color: "#112d42" }}> "We help Campuses achieve more with </span>  <span className="highlight2"> powerful and 
-            customizable solutions for  </span><span className="highlight"> every aspect of their 
+            <span className="highlight font-figtree" style={{color: "#112d42" }}> "We help Campuses achieve more with </span>  <span className="highlight2 font-figtree"> powerful and 
+            customizable solutions for  </span><span className="highlight font-figtree" style={{color: "#112d42" }}> every aspect of their 
              university life."</span>
             </p>
           </blockquote>

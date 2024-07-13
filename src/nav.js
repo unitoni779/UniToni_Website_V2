@@ -17,25 +17,25 @@ const Navbar = () => {
           <img src={logo} className="h-8" alt="Flowbite Logo" />
         </a>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-        <a
-          href="https://unitoni.com/student"
-          className="hidden md:inline-block text-black hover:text-blue-800 focus:outline-none font-bold text-md mr-7 cursor-pointer mt-2"
-          style={{ color: "#ff9a24" }}
-      >
-          Login
-      </a>
+      
 
 
           <Link to="/demo">
           <button
             type="button"
-            className="text-white bg-blue-700 hover:bg-blue-800 hidden md:block focus:outline-none font-bold focus:ring-4 focus:ring-blue-300 rounded-full text-md px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            style={{ backgroundColor: "#0087f7", opacity: "0.6" }}
+            className="text-white bg-blue-700 hover:bg-blue-800 hidden md:block focus:outline-none font-bold focus:ring-4 focus:ring-blue-300 rounded-full text-md px-5 py-2.5 text-center me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-6"
+            style={{ backgroundColor: "#0087f7", opacity: "0.9" }}
           >
             Book Demo
           </button>
         </Link>
-
+        <a
+          href="https://unitoni.com/student"
+          className="hidden md:inline-block text-black hover:text-blue-800 focus:outline-none font-bold text-md ml-7 cursor-pointer mt-2"
+          style={{ color: "#ff9a24" }}
+      >
+          Login
+      </a>
           <button
             onClick={toggleMenu}
             type="button"

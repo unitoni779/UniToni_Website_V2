@@ -1,21 +1,21 @@
 export const items = [
     {
         status: "inactive",
-        name: "Smart",
+        name: "Unified Platform:",
         position: "",
-        quote: "Plan your time and stay updated with your courses and assignments with the help of our artificial intelligence (AI) chat bot.",
+        quote: "UniToni integrates learning management, clubs management, and social engagement into a unified platform, enriching university experience and interaction.",
     },
     {
         status: "inactive",
-        name: "Secure",
+        name: "Strategic Partnerships: ",
         position: "",
-        quote: "Your data is processed securely on our servers, with strict protocols to safeguard your privacy.",
+        quote: "UniToni's revenue-sharing model with universities transforms education into investment, aligning academic goals with innovation for sustainable growth.",
     },
     {
         status: "active",  // This item is set to active
-        name: "Engaging",
+        name: "Academic-Business Bridge: ",
         position: "",
-        quote: "Create and join university-specific social networks and participate in vibrant academic and social communities.",
+        quote: "UniToni bridges academia and businesses, fostering collaboration and enhancing educational experiences through direct engagement opportunities.",
     },
 
 ];

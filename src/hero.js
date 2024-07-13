@@ -22,7 +22,7 @@ const ShuffleHero = () => {
                                 <a
                                     href="#"
                                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-white bg-gray-800 hover:bg-gray-600 md:py-4 md:text-lg md:px-10"
-                                    style={{ backgroundColor: "#0087f7", opacity: "0.6" }}
+                                    style={{ backgroundColor: "#0087f7", opacity: "0.9" }}
                                 >
                                     Book Demo
                                 </a>
@@ -30,15 +30,16 @@ const ShuffleHero = () => {
                         </div>
                     </div>
                     <div className="mt-4 flex justify-center sm:justify-start gap-3">
-                         <a href="https://apps.apple.com/tr/app/unitoni/id1603632698" target="_blank" rel="noopener noreferrer">
+                        <a href="https://apps.apple.com/tr/app/unitoni/id1603632698" target="_blank" rel="noopener noreferrer">
                             <img className="h-16 w-auto sm:h-24 sm:w-auto lg:h-32 lg:w-auto object-cover" src={app} alt="App Button" style={{ width: "200px" }} />
                         </a>
-<a href="https://play.google.com/store/apps/details?id=com.UniToni.unis&hl=en" target="_blank" rel="noopener noreferrer">
+                        <a href="https://play.google.com/store/apps/details?id=com.UniToni.unis&hl=en" target="_blank" rel="noopener noreferrer">
                             <img className="h-16 w-auto sm:h-24 sm:w-auto lg:h-32 lg:w-auto object-cover" src={google} alt="Google Button" style={{ width: "200px" }} />
-                        </a>                    </div>
+                        </a>
+                    </div>
                 </div>
                 <div className="lg:inset-y-0 lg:right-0 lg:w-2/3 my-4">
-                    <img className="h-94 sm:h-80 md:h-96 lg:h-96 w-full object-cover lg:w-auto lg:w-116 mr-4" src={tasarim} alt="Hero Image" />
+                    <img className="h-94 sm:h-80 md:h-96 lg:h-160 w-full object-cover lg:w-auto lg:w-116 mr-4" src={tasarim} alt="Hero Image" />
                 </div>
             </div>
         </section>
