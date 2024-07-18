@@ -38,7 +38,7 @@ const ShuffleHero = () => {
                         </a>
                     </div>
                 </div>
-                <div className="lg:inset-y-0 lg:right-0 lg:w-1/2 my-4">
+                <div className="lg:inset-y-0 lg:right-0 lg:w-3/2 my-4">
                     <img className="h-full w-full object-cover lg:w-auto lg:max-h-screen mr-4" src={tasarim} alt="Hero Image" />
                 </div>
             </div>
