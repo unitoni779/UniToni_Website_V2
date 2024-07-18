@@ -29,7 +29,7 @@ const ShuffleHero = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="mt-4 flex justify-center sm:justify-start gap-3">
+                    <div className="mt-4 flex justify-center sm:justify-start gap-3 ">
                         <a href="https://apps.apple.com/tr/app/unitoni/id1603632698" target="_blank" rel="noopener noreferrer">
                             <img className="h-20 w-auto sm:h-28 sm:w-auto lg:h-36 lg:w-auto object-cover" src={app} alt="App Button" style={{ width: "220px" }} />
                         </a>
@@ -39,7 +39,7 @@ const ShuffleHero = () => {
                     </div>
                 </div>
                 <div className="lg:inset-y-0 lg:right-0 lg:w-3/2 my-4">
-                    <img className="h-full w-full object-cover lg:w-auto lg:max-h-screen mr-4" src={tasarim} alt="Hero Image" />
+                    <img className="h-full w-full object-cover lg:w-auto lg:max-h-screen mr-4 mb-2" src={tasarim} alt="Hero Image" />
                 </div>
             </div>
         </section>
