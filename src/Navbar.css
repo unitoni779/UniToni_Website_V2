@@ -1,25 +1,27 @@
 /* Navbar.css */
 
 @font-face {
-    font-family: 'GTEesti-Display';
-    src: url('./assets/fonts/GT-Eesti-Display-Regular-Trial.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'GTEesti-Display';
-    src: url('./assets/fonts/GT-Eesti-Display-Bold-Trial.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'GTEesti-Display';
-    src: url('./assets/fonts/GT-Eesti-Display-Medium-Italic-Trial.otf') format('opentype');
-    font-weight: normal;
-    font-style: italic;
-  }
-  
-  /* Rest of your existing CSS */
-  
+  font-family: 'GTEesti-Display';
+  src: url('./assets/fonts/GT-Eesti-Display-Regular-Trial.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GTEesti-Display';
+  src: url('./assets/fonts/GT-Eesti-Display-Bold-Trial.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GTEesti-Display';
+  src: url('./assets/fonts/GT-Eesti-Display-Medium-Italic-Trial.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Explicitly set the navbar background color */
+nav {
+  background-color: white !important;
+}
