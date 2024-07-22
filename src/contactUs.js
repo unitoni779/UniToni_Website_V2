@@ -64,6 +64,7 @@ const Contact = () => {
 
   // Function to render the selected form based on selectedOption
   const renderForm = () => {
+
     switch (selectedOption) {
       case 'tech-support':
         return (
@@ -217,16 +218,38 @@ const Contact = () => {
             </div>
 
             <div className="mb-8">
-              <label htmlFor="work-email" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-                Work Email <span className="text-red-600">*</span>
-              </label>
-              <input
-                type="email"
-                id="work-email"
-                className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-                onChange={handleInputChange}
-              />
-            </div>
+          <label htmlFor="jobRole" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+            Job Role <span className="text-red-600">*</span>
+          </label>
+          <select
+            id="jobRole"
+            value={formData.jobRole}
+            onChange={handleInputChange}
+            className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+          >
+            <option value="" disabled>Please select</option>
+            <option value="CEO/Principal/Head/Dean">CEO/Principal/Head/Dean</option>
+            <option value="Vice Principal/Assistant Head">Vice Principal/Assistant Head</option>
+            <option value="Other Management">Other Management</option>
+            <option value="IT/Network/Technology">IT/Network/Technology</option>
+            <option value="E-learning/VLE/LMS">E-learning/VLE/LMS</option>
+            <option value="Teacher/Tutor/Lecturer">Teacher/Tutor/Lecturer</option>
+            <option value="Student">Student</option>
+            <option value="Parent">Parent</option>
+          </select>
+        </div>
+
+      <div className="mb-8">
+        <label htmlFor="company-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+          Company name <span className="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          id="company-name"
+          className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+          onChange={handleInputChange}
+        />
+      </div>
             <div className="mb-6">
                   <input type="checkbox" id="subscribe" className="h-6 w-6 mr-2" />
                   <label htmlFor="subscribe" className="text-lg text-gray-700" style={{ color: "#112d42" }}>
@@ -319,6 +342,52 @@ const Contact = () => {
                 onChange={handleInputChange}
               />
             </div>
+            <div className="mb-8">
+  <label htmlFor="idea" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+    Partner description/idea <span className="text-red-600">*</span>
+  </label>
+  <textarea
+    id="idea"
+    className="w-full h-36 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-2xl border border-gray-400 focus:outline-none py-2 px-4 resize-none"
+    onChange={handleInputChange}
+    rows="6"
+    placeholder="Describe your idea or partnership opportunity..."
+  />
+</div>
+
+            <div className="mb-8">
+          <label htmlFor="jobRole" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+            Job Role <span className="text-red-600">*</span>
+          </label>
+          <select
+            id="jobRole"
+            value={formData.jobRole}
+            onChange={handleInputChange}
+            className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+          >
+            <option value="" disabled>Please select</option>
+            <option value="CEO/Principal/Head/Dean">CEO/Principal/Head/Dean</option>
+            <option value="Vice Principal/Assistant Head">Vice Principal/Assistant Head</option>
+            <option value="Other Management">Other Management</option>
+            <option value="IT/Network/Technology">IT/Network/Technology</option>
+            <option value="E-learning/VLE/LMS">E-learning/VLE/LMS</option>
+            <option value="Teacher/Tutor/Lecturer">Teacher/Tutor/Lecturer</option>
+            <option value="Student">Student</option>
+            <option value="Parent">Parent</option>
+          </select>
+        </div>
+
+      <div className="mb-8">
+        <label htmlFor="company-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+          Company name <span className="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          id="company-name"
+          className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+          onChange={handleInputChange}
+        />
+      </div>
             <div className="mb-6">
                   <input type="checkbox" id="subscribe" className="h-6 w-6 mr-2" />
                   <label htmlFor="subscribe" className="text-lg text-gray-700" style={{ color: "#112d42" }}>
@@ -411,6 +480,53 @@ const Contact = () => {
             onChange={handleInputChange}
           />
         </div>
+        <div className="mb-8">
+  <label htmlFor="help" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+    How can we help? <span className="text-red-600">*</span>
+  </label>
+  <textarea
+    id="help"
+    className="w-full h-36 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-2xl border border-gray-400 focus:outline-none py-2 px-4 resize-none"
+    onChange={handleInputChange}
+    rows="6"
+    placeholder="Describe your idea or partnership opportunity..."
+  />
+</div>
+
+<div className="mb-8">
+  <label htmlFor="jobRole" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+    Job Role <span className="text-red-600">*</span>
+  </label>
+  <select
+    id="jobRole"
+    value={formData.jobRole}
+    onChange={handleInputChange}
+    className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+  >
+    <option value="" disabled>Please select</option>
+    <option value="CEO/Principal/Head/Dean">CEO/Principal/Head/Dean</option>
+    <option value="Vice Principal/Assistant Head">Vice Principal/Assistant Head</option>
+    <option value="Other Management">Other Management</option>
+    <option value="IT/Network/Technology">IT/Network/Technology</option>
+    <option value="E-learning/VLE/LMS">E-learning/VLE/LMS</option>
+    <option value="Teacher/Tutor/Lecturer">Teacher/Tutor/Lecturer</option>
+    <option value="Student">Student</option>
+    <option value="Parent">Parent</option>
+  </select>
+</div>
+
+<div className="mb-8">
+  <label htmlFor="company-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+    Company name <span className="text-red-600">*</span>
+  </label>
+  <input
+    type="text"
+    id="company-name"
+    className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+    onChange={handleInputChange}
+  />
+</div>
+
         <div className="mb-6">
                   <input type="checkbox" id="subscribe" className="h-6 w-6 mr-2" />
                   <label htmlFor="subscribe" className="text-lg text-gray-700" style={{ color: "#112d42" }}>
