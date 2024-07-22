@@ -12,14 +12,19 @@ import Footer from './footer';
 import ShuffleHero from './hero';
 import Carousel from './diffrent';
 import SupportersSection from './support';
+import Example from './PhoneScreenAnimation';
+
+
 
 const HomePage = () => {
   return (
     <div className="font-sans">
       <ShuffleHero />
+    
       <Carousel />
       <SupportersSection />
       <IntegratedLearningTools />
+      {/* <Example /> */}
       <TestimonialSection />
       <ServicesSection />
       <Footer />

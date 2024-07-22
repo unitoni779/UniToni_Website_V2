@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 const ShuffleHero = () => {
     return (
-        <section className="sm:mt-6 lg:mt-0 mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 font-figtree" id='hero'>
-            <div className="my-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex gap-3 lg:flex-justify lg:flex flex-col lg:flex-row">
+        <section className="mt-12 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 font-figtree" id='hero'>
+            <div className="my-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex flex-col lg:flex-row lg:gap-12">
                 <div className="sm:text-center lg:text-left lg:w-1/2">
                     <h1 className="text-4xl tracking-tight font-bold text-gray-800 sm:text-5xl md:text-6xl">
                         <span className="block xl:inline">The Future of Education is </span>
@@ -29,17 +29,21 @@ const ShuffleHero = () => {
                             </Link>
                         </div>
                     </div>
-                    <div className="mt-4 flex justify-center sm:justify-start gap-3 ">
+                    <div className="mt-4 flex justify-center sm:justify-start  md:justify-center gap-3 ">
                         <a href="https://apps.apple.com/tr/app/unitoni/id1603632698" target="_blank" rel="noopener noreferrer">
-                            <img className="h-20 w-auto sm:h-28 sm:w-auto lg:h-36 lg:w-auto object-cover" src={app} alt="App Button" style={{ width: "220px" }} />
+                            <img className="h-20 w-auto sm:h-28 lg:h-36 lg:w-auto object-cover" src={app} alt="App Button" style={{ width: "220px" }} />
                         </a>
                         <a href="https://play.google.com/store/apps/details?id=com.UniToni.unis&hl=en" target="_blank" rel="noopener noreferrer">
-                            <img className="h-20 w-auto sm:h-28 sm:w-auto lg:h-36 lg:w-auto object-cover" src={google} alt="Google Button" style={{ width: "220px" }} />
+                            <img className="h-20 w-auto sm:h-28 lg:h-36 lg:w-auto object-cover" src={google} alt="Google Button" style={{ width: "220px" }} />
                         </a>
                     </div>
                 </div>
-                <div className="lg:inset-y-0 lg:right-0 lg:w-3/2 my-4">
-                    <img className="h-full w-full object-cover lg:w-auto lg:max-h-screen mr-4 mb-2" src={tasarim} alt="Hero Image"  />
+                <div className="relative lg:w-3/2 my-4 flex items-center justify-center overflow-hidden">
+                    <img 
+                        className="object-cover w-full h-full max-w-[100vw] max-h-[300px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[330px] xl:max-h-[700px]" 
+                        src={tasarim} 
+                        alt="Hero Image" 
+                    />
                 </div>
             </div>
         </section>
