@@ -1,0 +1,28 @@
+/* Navbar.css */
+
+@font-face {
+    font-family: 'GTEesti-Display';
+
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GTEesti-Display';
+
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'GTEesti-Display';
+
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  /* Explicitly set the navbar background color */
+  nav {
+    background-color: white !important;
+  }
+  

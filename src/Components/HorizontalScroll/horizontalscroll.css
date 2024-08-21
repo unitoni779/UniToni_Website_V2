@@ -1,0 +1,59 @@
+.firstImage {
+    width: 250px; /* Adjust as needed */
+    height: 100px;
+    margin-left: 80%; /* Align with other images */
+    position: relative;
+    transform: scale(1);
+}
+
+.carousel {
+    background-color: white;
+    height: 300vh;
+}
+
+.contentContainer {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 14vw;
+    padding: 0 4rem;
+    width: calc(200% + 90vw);
+    margin-top: 200px;
+}
+
+.imageItem {
+    width: 700%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Ensure the scale is applied smoothly */
+    transition: transform 0.8s ease-in-out;
+}
+
+.emptySpace {
+    width: 750%; 
+    height: auto;
+}
+.textContainer {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Adjust width as needed */
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10; /* Ensure text is above images */
+}
