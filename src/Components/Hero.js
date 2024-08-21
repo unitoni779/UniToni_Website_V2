@@ -45,7 +45,7 @@ const ShuffleHero = () => {
                     </div>
                     <div className="mt-4 flex justify-center sm:justify-start md:justify-center gap-3 ">
                         <a href="https://apps.apple.com/tr/app/unitoni/id1603632698" target="_blank" rel="noopener noreferrer">
-                        <img className="h-20 w-auto sm:h-28 lg:h-36 lg:w-auto object-cover" src={app} alt="Download on the App Store" style={{ width: "220px" }} />
+                        <img  className="h-20 w-auto sm:h-28 lg:h-36 lg:w-auto object-cover" src={app} alt="Download on the App Store" style={{ width: "220px" }} />
 
 
                         </a>
