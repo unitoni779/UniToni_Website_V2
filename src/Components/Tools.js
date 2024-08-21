@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoThumbsUpOutline, IoTimeOutline, IoHandDownOutline } from 'react-icons/io5';
+import { IoThumbsUpOutline, IoTimeOutline} from 'react-icons/io5';
 import { PiHandFist } from "react-icons/pi";
 
 const iconStyles = {

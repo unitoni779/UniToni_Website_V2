@@ -13,11 +13,13 @@ const Contact = () => {
     phone: '',
     email: '',
     subscribe: false,
-    consent: false
+    consent: false,
+    jobRole: '',
+    companyName: '',
+    idea: ''
   });
 
   useEffect(() => {
-    // Fetch country data from the API
     axios.get('https://restcountries.com/v3.1/all')
       .then(response => {
         const countryList = response.data.map(country => ({
@@ -56,225 +58,16 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission based on selectedOption
     console.log('Selected option:', selectedOption);
     console.log('Form data:', formData);
     // Add your submission logic here
   };
 
-  // Function to render the selected form based on selectedOption
   const renderForm = () => {
-
     switch (selectedOption) {
       case 'tech-support':
         return (
-          <form onSubmit={handleSubmit} action="mailto:contact@unitoni.com" method="post" className='font-figtree'>
-            <div className="mb-8">
-              <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2 " style={{ color: "#112d42" }}>
-                Country <span className="text-red-600">*</span>
-              </label>
-              <select
-                id="country"
-                value={selectedCountry}
-                onChange={handleCountryChange}
-                className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-              >
-                <option value="" disabled>Select your country</option>
-                {countries.map(country => (
-                  <option key={country.code} value={country.name}>
-                    {country.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="mb-8 flex font-figtree">
-              <div className="mr-4">
-                <label htmlFor="first-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-                  First Name <span className="text-red-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="first-name"
-                  className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="last-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-                  Last Name <span className="text-red-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="last-name"
-                  className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-                  onChange={handleInputChange}
-                />
-              </div>
-            </div>
-
-            <div className="mb-8 font-figtree">
-              <label htmlFor="phone" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-                Phone <span className="text-red-600">*</span>
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="mb-6 font-figtree">
-                  <input type="checkbox" id="subscribe" className="h-6 w-6 mr-2" />
-                  <label htmlFor="subscribe" className="text-lg text-gray-700" style={{ color: "#112d42" }}>
-                    Yes, please send me informative content about education topics, products, services, and events. I know that I may unsubscribe at any time.
-                  </label>
-                </div>
-
-                <div className="mb-8 font-figtree">
-                  <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
-                  By filling out this form, you consent to sharing your contact info with UniToni. UniToni respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.                  </label>
-                </div>
-
-            <div className="mb-8" font-figtree>
-              <label htmlFor="work-email" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-                Work Email <span className="text-red-600">*</span>
-              </label>
-              <input
-                type="email"
-                id="work-email"
-                className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-                onChange={handleInputChange}
-              />
-            </div>
-         
-                
-            <button
-              type="submit"
-              className="w-full h-12 text-center text-white text-xl font-semibold leading-6 rounded-full bg-indigo-600 shadow transition-all duration-700 hover:bg-indigo-800"
-              style={{ backgroundColor: "#ff9a24" }}
-            >
-              SUBMIT
-            </button>
-          </form>
-        );
-      case 'lms':
-        return (
-            <form onSubmit={handleSubmit} action="mailto:contact@unitoni.com" method="post">
-            <div className="mb-8 font-figtree" >
-              <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-                Country <span className="text-red-600">*</span>
-              </label>
-              <select
-                id="country"
-                value={selectedCountry}
-                onChange={handleCountryChange}
-                className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-              >
-                <option value="" disabled>Select your country</option>
-                {countries.map(country => (
-                  <option key={country.code} value={country.name}>
-                    {country.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div className="mb-8 flex font-figtree">
-              <div className="mr-4">
-                <label htmlFor="first-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-                  First Name <span className="text-red-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="first-name"
-                  className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-                  onChange={handleInputChange}
-                />
-              </div>
-              <div>
-                <label htmlFor="last-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-                  Last Name <span className="text-red-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="last-name"
-                  className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-                  onChange={handleInputChange}
-                />
-              </div>
-            </div>
-
-            <div className="mb-8">
-              <label htmlFor="phone" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-                Phone <span className="text-red-600">*</span>
-              </label>
-              <input
-                type="tel"
-                id="phone"
-                className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-                onChange={handleInputChange}
-              />
-            </div>
-
-            <div className="mb-8">
-          <label htmlFor="jobRole" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-            Job Role <span className="text-red-600">*</span>
-          </label>
-          <select
-            id="jobRole"
-            value={formData.jobRole}
-            onChange={handleInputChange}
-            className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-          >
-            <option value="" disabled>Please select</option>
-            <option value="CEO/Principal/Head/Dean">CEO/Principal/Head/Dean</option>
-            <option value="Vice Principal/Assistant Head">Vice Principal/Assistant Head</option>
-            <option value="Other Management">Other Management</option>
-            <option value="IT/Network/Technology">IT/Network/Technology</option>
-            <option value="E-learning/VLE/LMS">E-learning/VLE/LMS</option>
-            <option value="Teacher/Tutor/Lecturer">Teacher/Tutor/Lecturer</option>
-            <option value="Student">Student</option>
-            <option value="Parent">Parent</option>
-          </select>
-        </div>
-
-      <div className="mb-8">
-        <label htmlFor="company-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-          Company name <span className="text-red-600">*</span>
-        </label>
-        <input
-          type="text"
-          id="company-name"
-          className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-          onChange={handleInputChange}
-        />
-      </div>
-            <div className="mb-6">
-                  <input type="checkbox" id="subscribe" className="h-6 w-6 mr-2" />
-                  <label htmlFor="subscribe" className="text-lg text-gray-700" style={{ color: "#112d42" }}>
-                    Yes, please send me informative content about education topics, products, services, and events. I know that I may unsubscribe at any time.
-                  </label>
-                </div>
-
-                <div className="mb-8">
-                  <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
-                  By filling out this form, you consent to sharing your contact info with UniToni. UniToni respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy
-
-                  </label>
-                </div>
-            <button
-              type="submit"
-              className="w-full h-12 text-center text-white text-xl font-semibold leading-6 rounded-full bg-indigo-600 shadow transition-all duration-700 hover:bg-indigo-800"
-              style={{ backgroundColor: "#ff9a24" }}
-            >
-              SUBMIT
-            </button>
-          </form>
-        );
-      case 'partner-info':
-        return (
-            <form onSubmit={handleSubmit} action="mailto:contact@unitoni.com" method="post">
+          <form onSubmit={handleSubmit} className='font-figtree'>
             <div className="mb-8">
               <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                 Country <span className="text-red-600">*</span>
@@ -296,23 +89,122 @@ const Contact = () => {
 
             <div className="mb-8 flex">
               <div className="mr-4">
-                <label htmlFor="first-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                <label htmlFor="firstName" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                   First Name <span className="text-red-600">*</span>
                 </label>
                 <input
                   type="text"
-                  id="first-name"
+                  id="firstName"
                   className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
                   onChange={handleInputChange}
                 />
               </div>
               <div>
-                <label htmlFor="last-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                <label htmlFor="lastName" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
                   Last Name <span className="text-red-600">*</span>
                 </label>
                 <input
                   type="text"
-                  id="last-name"
+                  id="lastName"
+                  className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+                  onChange={handleInputChange}
+                />
+              </div>
+            </div>
+
+            <div className="mb-8">
+              <label htmlFor="phone" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                Phone <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+                onChange={handleInputChange}
+              />
+            </div>
+            
+            <div className="mb-6">
+              <input
+                type="checkbox"
+                id="subscribe"
+                checked={formData.subscribe}
+                onChange={handleInputChange}
+                className="h-6 w-6 mr-2"
+              />
+              <label htmlFor="subscribe" className="text-lg text-gray-700" style={{ color: "#112d42" }}>
+                Yes, please send me informative content about education topics, products, services, and events. I know that I may unsubscribe at any time.
+              </label>
+            </div>
+
+            <div className="mb-8">
+              <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
+                By filling out this form, you consent to sharing your contact info with UniToni. UniToni respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.
+              </label>
+            </div>
+
+            <div className="mb-8">
+              <label htmlFor="email" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                Work Email <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+                onChange={handleInputChange}
+              />
+            </div>
+            
+            <button
+              type="submit"
+              className="w-full h-12 text-center text-white text-xl font-semibold leading-6 rounded-full bg-indigo-600 shadow transition-all duration-700 hover:bg-indigo-800"
+              style={{ backgroundColor: "#ff9a24" }}
+            >
+              SUBMIT
+            </button>
+          </form>
+        );
+      case 'lms':
+        return (
+          <form onSubmit={handleSubmit} className='font-figtree'>
+            <div className="mb-8">
+              <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                Country <span className="text-red-600">*</span>
+              </label>
+              <select
+                id="country"
+                value={selectedCountry}
+                onChange={handleCountryChange}
+                className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+              >
+                <option value="" disabled>Select your country</option>
+                {countries.map(country => (
+                  <option key={country.code} value={country.name}>
+                    {country.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="mb-8 flex">
+              <div className="mr-4">
+                <label htmlFor="firstName" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                  First Name <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="firstName"
+                  className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div>
+                <label htmlFor="lastName" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                  Last Name <span className="text-red-600">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="lastName"
                   className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
                   onChange={handleInputChange}
                 />
@@ -332,74 +224,72 @@ const Contact = () => {
             </div>
 
             <div className="mb-8">
-              <label htmlFor="work-email" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-                Work Email <span className="text-red-600">*</span>
+              <label htmlFor="jobRole" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                Job Role
               </label>
               <input
-                type="email"
-                id="work-email"
+                type="text"
+                id="jobRole"
                 className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
                 onChange={handleInputChange}
               />
             </div>
-            <div className="mb-8">
-  <label htmlFor="idea" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-    Partner description/idea <span className="text-red-600">*</span>
-  </label>
-  <textarea
-    id="idea"
-    className="w-full h-36 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-2xl border border-gray-400 focus:outline-none py-2 px-4 resize-none"
-    onChange={handleInputChange}
-    rows="6"
-    placeholder="Describe your idea or partnership opportunity..."
-  />
-</div>
 
             <div className="mb-8">
-          <label htmlFor="jobRole" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-            Job Role <span className="text-red-600">*</span>
-          </label>
-          <select
-            id="jobRole"
-            value={formData.jobRole}
-            onChange={handleInputChange}
-            className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-          >
-            <option value="" disabled>Please select</option>
-            <option value="CEO/Principal/Head/Dean">CEO/Principal/Head/Dean</option>
-            <option value="Vice Principal/Assistant Head">Vice Principal/Assistant Head</option>
-            <option value="Other Management">Other Management</option>
-            <option value="IT/Network/Technology">IT/Network/Technology</option>
-            <option value="E-learning/VLE/LMS">E-learning/VLE/LMS</option>
-            <option value="Teacher/Tutor/Lecturer">Teacher/Tutor/Lecturer</option>
-            <option value="Student">Student</option>
-            <option value="Parent">Parent</option>
-          </select>
-        </div>
+              <label htmlFor="companyName" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                Company Name
+              </label>
+              <input
+                type="text"
+                id="companyName"
+                className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+                onChange={handleInputChange}
+              />
+            </div>
 
-      <div className="mb-8">
-        <label htmlFor="company-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-          Company name <span className="text-red-600">*</span>
-        </label>
-        <input
-          type="text"
-          id="company-name"
-          className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-          onChange={handleInputChange}
-        />
-      </div>
+            <div className="mb-8">
+              <label htmlFor="idea" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                Your Idea
+              </label>
+              <textarea
+                id="idea"
+                rows="4"
+                className="w-full h-40 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-xl border border-gray-400 focus:outline-none py-2 px-4"
+                onChange={handleInputChange}
+              ></textarea>
+            </div>
+
             <div className="mb-6">
-                  <input type="checkbox" id="subscribe" className="h-6 w-6 mr-2" />
-                  <label htmlFor="subscribe" className="text-lg text-gray-700" style={{ color: "#112d42" }}>
-                    Yes, please send me informative content about education topics, products, services, and events. I know that I may unsubscribe at any time.
-                  </label>
-                </div>
+              <input
+                type="checkbox"
+                id="subscribe"
+                checked={formData.subscribe}
+                onChange={handleInputChange}
+                className="h-6 w-6 mr-2"
+              />
+              <label htmlFor="subscribe" className="text-lg text-gray-700" style={{ color: "#112d42" }}>
+                Yes, please send me informative content about education topics, products, services, and events. I know that I may unsubscribe at any time.
+              </label>
+            </div>
 
-                <div className="mb-8">
-                  <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
-                  By filling out this form, you consent to sharing your contact info with UniToni. UniToni respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.                  </label>
-               
-                </div>
+            <div className="mb-8">
+              <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
+                By filling out this form, you consent to sharing your contact info with UniToni. UniToni respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.
+              </label>
+            </div>
+
+            <div className="mb-8">
+              <label htmlFor="email" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                Work Email <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+                onChange={handleInputChange}
+              />
+            </div>
+            
             <button
               type="submit"
               className="w-full h-12 text-center text-white text-xl font-semibold leading-6 rounded-full bg-indigo-600 shadow transition-all duration-700 hover:bg-indigo-800"
@@ -409,193 +299,47 @@ const Contact = () => {
             </button>
           </form>
         );
-
-  case 'other':
-    return (
-        <form onSubmit={handleSubmit} action="mailto:contact@unitoni.com"method="post" className='font-figtree'>
-        <div className="mb-8">
-          <label htmlFor="country" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-            Country <span className="text-red-600">*</span>
-          </label>
-          <select
-            id="country"
-            value={selectedCountry}
-            onChange={handleCountryChange}
-            className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-          >
-            <option value="" disabled>Select your country</option>
-            {countries.map(country => (
-              <option key={country.code} value={country.name}>
-                {country.name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="mb-8 flex">
-          <div className="mr-4">
-            <label htmlFor="first-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-              First Name <span className="text-red-600">*</span>
-            </label>
-            <input
-              type="text"
-              id="first-name"
-              className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-              onChange={handleInputChange}
-            />
-          </div>
-          <div>
-            <label htmlFor="last-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-              Last Name <span className="text-red-600">*</span>
-            </label>
-            <input
-              type="text"
-              id="last-name"
-              className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-              onChange={handleInputChange}
-            />
-          </div>
-        </div>
-
-        <div className="mb-8">
-          <label htmlFor="phone" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-            Phone <span className="text-red-600">*</span>
-          </label>
-          <input
-            type="tel"
-            id="phone"
-            className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-            onChange={handleInputChange}
-          />
-        </div>
-
-        <div className="mb-8">
-          <label htmlFor="work-email" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-            Work Email <span className="text-red-600">*</span>
-          </label>
-          <input
-            type="email"
-            id="work-email"
-            className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="mb-8">
-  <label htmlFor="help" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-    How can we help? <span className="text-red-600">*</span>
-  </label>
-  <textarea
-    id="help"
-    className="w-full h-36 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-2xl border border-gray-400 focus:outline-none py-2 px-4 resize-none"
-    onChange={handleInputChange}
-    rows="6"
-    placeholder="Describe your idea or partnership opportunity..."
-  />
-</div>
-
-<div className="mb-8">
-  <label htmlFor="jobRole" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-    Job Role <span className="text-red-600">*</span>
-  </label>
-  <select
-    id="jobRole"
-    value={formData.jobRole}
-    onChange={handleInputChange}
-    className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-  >
-    <option value="" disabled>Please select</option>
-    <option value="CEO/Principal/Head/Dean">CEO/Principal/Head/Dean</option>
-    <option value="Vice Principal/Assistant Head">Vice Principal/Assistant Head</option>
-    <option value="Other Management">Other Management</option>
-    <option value="IT/Network/Technology">IT/Network/Technology</option>
-    <option value="E-learning/VLE/LMS">E-learning/VLE/LMS</option>
-    <option value="Teacher/Tutor/Lecturer">Teacher/Tutor/Lecturer</option>
-    <option value="Student">Student</option>
-    <option value="Parent">Parent</option>
-  </select>
-</div>
-
-<div className="mb-8">
-  <label htmlFor="company-name" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-    Company name <span className="text-red-600">*</span>
-  </label>
-  <input
-    type="text"
-    id="company-name"
-    className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-    onChange={handleInputChange}
-  />
-</div>
-
-        <div className="mb-6">
-                  <input type="checkbox" id="subscribe" className="h-6 w-6 mr-2" />
-                  <label htmlFor="subscribe" className="text-lg text-gray-700" style={{ color: "#112d42" }}>
-                    Yes, please send me informative content about education topics, products, services, and events. I know that I may unsubscribe at any time.
-                  </label>
-                </div>
-
-                <div className="mb-8">
-                  <label htmlFor="consent" className="text-sm text-gray-700" style={{ color: "#112d42" }}>
-                  By filling out this form, you consent to sharing your contact info with UniToni. UniToni respects your privacy and is dedicated to keeping your information secure. The information you provide will be used in accordance with applicable law and the terms of our privacy policy.                  </label>
-
-                </div>
-        <button
-          type="submit"
-          className="w-full h-12 text-center text-white text-xl font-semibold leading-6 rounded-full bg-indigo-600 shadow transition-all duration-700 hover:bg-indigo-800"
-          style={{ backgroundColor: "#ff9a24" }}
-        >
-          SUBMIT
-        </button>
-      </form>
-    );
-    default:
+      default:
         return null;
     }
   };
+
   return (
     <>
-  
-    <section className="py-24 font-figtree">
-    <div className="mx-auto max-w-9xl px-4 sm:px-6 lg:px-8">
-      <h1 className="text-5xl font-bold mb-8 text-center" style={{ color: "#112d42",marginTop:"80px" }}>Contact Us</h1>
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-32"style={{gap:"50px"}}>
-        <div className="lg:max-w-xl w-full h-[600px] flex items-center justify-center bg-cover bg-no-repeat" style={{ backgroundImage: `url(${demo})`, backgroundPosition: ' center' }}>
-          <div className="lg:w-96 w-auto h-auto lg:p-6 p-4"></div>
-        </div>
-        <div className="flex items-center lg:mb-0 mb-10 mr-60" style={{marginBottom:"200px"}}>
-          <div>
-            <h4 className="text-indigo-600 text-base font-medium leading-6 mb-4 lg:text-left text-center"></h4>
-            <h2 className="text-gray-900 font-manrope text-4xl font-semibold leading-10 mb-9 lg:text-left text-center" style={{ color: "#112d42" }}>
-              How can we help?
-            </h2>
-            <form onSubmit={handleSubmit} className='font-figtree'>
-              <div className="mb-8">
-                <label htmlFor="options" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
-                  Choose an option <span className="text-red-600">*</span>
-                </label>
-                <select
-                  id="options"
-                  value={selectedOption}
-                  onChange={handleOptionChange}
-                  className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
-                  style={{width:"550px"}}
-                >
-                  <option value="" disabled>Select an option</option>
-                  <option value="tech-support">I am requesting technical assistance</option>
-                  <option value="lms">I am looking for an LMS</option>
-                  <option value="partner-info">I want to become a partner</option>
-                  <option value="other">Other</option>
-                </select>
+      <section className="py-16">
+        <div className="container mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-8" style={{ color: "#112d42" }}>Contact Us</h2>
+          <div className="flex flex-wrap justify-center">
+            <div className="w-full md:w-1/2">
+              <img src={demo} alt="Contact Us" className="w-full h-auto rounded-lg shadow-md" />
+            </div>
+            <div className="w-full md:w-1/2">
+              <div className="p-8 bg-white shadow-lg rounded-lg">
+                <div className="mb-6">
+                  <label htmlFor="option" className="block text-lg font-medium text-gray-700 mb-2" style={{ color: "#112d42" }}>
+                    I want to get in touch for:
+                  </label>
+                  <select
+                    id="option"
+                    value={selectedOption}
+                    onChange={handleOptionChange}
+                    className="w-full h-14 shadow-sm text-gray-600 text-lg font-normal leading-7 rounded-full border border-gray-400 focus:outline-none py-2 px-4"
+                  >
+                    <option value="" disabled>Select an option</option>
+                    <option value="tech-support">Technical Support</option>
+                    <option value="lms">Learning Management System</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                {renderForm()}
               </div>
-              {renderForm()}
-            </form>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <Footer/>
-  </>
+      </section>
+      <Footer />
+    </>
   );
 };
 

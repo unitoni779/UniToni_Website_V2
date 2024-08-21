@@ -43,13 +43,17 @@ const Footer = () => {
           
             <div class="py-16 flex justify-between items-center flex-col gap-8 lg:flex-row font-figtree">
                 <a href="/"  class="flex justify-center ">
-                 <img src={logo}  style={{width:"200px"}}/>
+                <img src={logo} alt="Company logo" style={{ width: "200px" }} />
+
                         
                 </a>
                 <ul className="text-lg text-center sm:flex items-cente justify-center gap-14 lg:gap-10 xl:gap-14 transition-all duration-500">
-                 <li style={{ color: "#112d42" }}><Link to="/contact"><a href="javascript:;" className="hover:text-gray-400" style={{ color: "#112d42" }}>Contact us</a></Link></li> 
-              <li className="sm:my-0 my-2" ><a href="javascript:;" onClick={openTerms} className="hover:text-gray-400" style={{ color: "#112d42" }}>Terms & Conditions</a></li>
-              <li><a href="#" onClick={openPrivacyPolicy} className="hover:text-gray-400" style={{ color: "#112d42" }}>Privacy Policy</a></li>
+                 <li style={{ color: "#112d42" }}><Link to="/contact" className="hover:text-gray-400" style={{ color: "#112d42" }}>Contact us</Link>
+</li> 
+              <li className="sm:my-0 my-2" ><button onClick={openTerms} className="hover:text-gray-400" style={{ color: "#112d42" }}>Terms & Conditions</button></li>
+              <li>
+<button onClick={openPrivacyPolicy} className="hover:text-gray-400" style={{ color: "#112d42" }}>Privacy Policy</button>
+</li>
             </ul>
                 <div class="flex  space-x-4 sm:justify-center  ">
                     <a href="https://x.com/_unitoni?s=21&t=xP4VT6NuqlkAPMPY-ru64A"    class="w-9 h-9 rounded-full bg-blue-200 flex justify-center items-center hover:bg-yellow-200">

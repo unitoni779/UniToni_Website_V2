@@ -33,23 +33,24 @@ const ShuffleHero = () => {
                     </p>
                     <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                         <div className="rounded-md">
-                            <Link to="/demo">
-                                <a
-                                    href="#"
-                                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-white bg-gray-800 hover:bg-gray-600 md:py-4 md:text-lg md:px-10"
-                                    style={{ backgroundColor: "#0087f7", opacity: "0.9" }}
-                                >
-                                    Book Demo
-                                </a>
-                            </Link>
+                        <Link
+    to="/demo"
+    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-white bg-gray-800 hover:bg-gray-600 md:py-4 md:text-lg md:px-10"
+    style={{ backgroundColor: "#0087f7", opacity: "0.9" }}
+>
+    Book Demo
+</Link>
+
                         </div>
                     </div>
                     <div className="mt-4 flex justify-center sm:justify-start md:justify-center gap-3 ">
                         <a href="https://apps.apple.com/tr/app/unitoni/id1603632698" target="_blank" rel="noopener noreferrer">
-                            <img className="h-20 w-auto sm:h-28 lg:h-36 lg:w-auto object-cover" src={app} alt="App Button" style={{ width: "220px" }} />
+                        <img className="h-20 w-auto sm:h-28 lg:h-36 lg:w-auto object-cover" src={app} alt="Download on the App Store" style={{ width: "220px" }} />
+
+
                         </a>
                         <a href="https://play.google.com/store/apps/details?id=com.UniToni.unis&hl=en" target="_blank" rel="noopener noreferrer">
-                            <img className="h-20 w-auto sm:h-28 lg:h-36 lg:w-auto object-cover" src={google} alt="Google Button" style={{ width: "220px" }} />
+                        <img className="h-20 w-auto sm:h-28 lg:h-36 lg:w-auto object-cover" src={google} alt="Get it on Google Play" style={{ width: "220px" }} />
                         </a>
                     </div>
                 </div>

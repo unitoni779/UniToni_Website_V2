@@ -40,14 +40,14 @@ const Demo = () => {
     e.preventDefault(); // Prevent the default form submission
   
     try {
-      const response = await axios.post(
+      await axios.post(
         'https://unitoni.com/api/website/send-demo-request-email',
         {
-          'country': selectedCountry,
-          'first_name': formData.firstName,
-          'last_name': formData.lastName,
-          'phone': formData.phone,
-          'email': formData.email
+          country: selectedCountry,
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          phone: formData.phone,
+          email: formData.email
         },
         { 
           headers: {
@@ -61,13 +61,10 @@ const Demo = () => {
   
     } catch (error) {
       if (error.response) {
-       
         alert('There was an error sending your demo request. Please try again.');
       } else if (error.request) {
-     
         alert('Network error: Please check your connection or try again later.');
       } else {
-     
         alert('Unexpected error: Please try again later.');
       }
       console.error('Error sending demo request:', error);
@@ -85,7 +82,9 @@ const Demo = () => {
             </div>
             <div className="flex items-center lg:mb-0 mb-10">
               <div>
-                <h4 className="text-indigo-600 text-base font-medium leading-6 mb-4 lg:text-left text-center"></h4>
+                <h4 className="text-indigo-600 text-base font-medium leading-6 mb-4 lg:text-left text-center">
+                  Contact Us for a Live Demo
+                </h4>
                 <h2 className="text-gray-900 font-manrope text-4xl font-semibold leading-10 mb-9 lg:text-left text-center" style={{ color: "#112d42" }}>
                   Get a live demo of <span style={{color:"#0087f7"}}>Uni</span><span style={{color:"#ff9a24 "}}>Toni</span>
                 </h2>
