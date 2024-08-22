@@ -1,5 +1,5 @@
 .firstImage {
-    width: 175px; /* Adjust as needed */
+    width: 260px; /* Adjust as needed */
     height: 100px;
     margin-left: 80%; /* Align with other images */
     position: relative;
@@ -25,14 +25,14 @@
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: 1fr;
-    grid-gap: 12vw;
+    grid-gap: 16vw;
     padding: 0 4rem;
     width: calc(200% + 90vw);
-    margin-top: 250px;
+    margin-top: 350px;
 }
 
 .imageItem {
-    width: 500%;
+    width: 750%;
     height: auto;
     display: flex;
     align-items: center;
