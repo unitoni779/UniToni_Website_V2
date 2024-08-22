@@ -58,7 +58,7 @@ const ShuffleHero = () => {
                     <img 
                         className="object-cover w-full h-full max-w-[100vw] max-h-[300px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[330px] xl:max-h-[700px]" 
                         src={tasarim} 
-                        alt="Hero Image" 
+                        alt="Hero" 
                     />
                 </div>
             </div>

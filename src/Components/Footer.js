@@ -27,6 +27,7 @@ const Footer = () => {
             <div className="flex justify-center">
   <Link to="/demo">
     <a
+    href="/demo"
       className="flex items-center justify-center px-8 py-3 border border-transparent text-base font-bold rounded-full text-white bg-gray-800 hover:bg-gray-600 md:py-4 md:text-lg md:px-10 mt-8 font-figtree"
       style={{ backgroundColor: "#0087f7", opacity: "0.9", width: "300px" }}
     >
@@ -84,7 +85,7 @@ const Footer = () => {
     
             <div class="py-7 border-t border-[#112d42]"style={{color:"#112d42"}}>
                 <div class="flex items-center justify-center">
-                    <span class="text-gray-400 ">©<a >UniToni</a>2024, All rights reserved.</span>
+                    <span class="text-gray-400 ">©<a href="/" >UniToni</a>2024, All rights reserved.</span>
                 </div>
             </div>
         </div>
