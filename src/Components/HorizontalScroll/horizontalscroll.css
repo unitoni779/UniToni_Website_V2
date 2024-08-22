@@ -1,5 +1,5 @@
 .firstImage {
-    width: 212px; /* Adjust as needed */
+    width: 175px; /* Adjust as needed */
     height: 100px;
     margin-left: 80%; /* Align with other images */
     position: relative;
@@ -32,7 +32,7 @@
 }
 
 .imageItem {
-    width: 600%;
+    width: 500%;
     height: auto;
     display: flex;
     align-items: center;
