@@ -10,8 +10,8 @@ const HorizontalScroll = () => {
     // X-axis transform for horizontal scrolling
     const x = useTransform(scrollYProgress, [0.3, 1], ["10%", "-70%"]);
 
-    // Y-axis transform for the first image, starts higher and moves down
-    const yFirstImage = useTransform(scrollYProgress, [0, 0.2], ["-200px", "0px"]); // Adjust the initial offset as needed
+    // Y-axis transform for the first image, starts higher and moves down smoothly
+    const yFirstImage = useTransform(scrollYProgress, [0, 0.2], ["-200px", "0px"]);
 
     // Manage opacity of other images based on scroll progress
     const opacityOthers = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
@@ -54,6 +54,7 @@ const HorizontalScroll = () => {
                         <motion.div
                             className="firstImageWrapper"
                             style={{ y: yFirstImage }}
+                            transition={{ duration: 0.8, ease: "easeInOut" }} // Smooth transition for the Y-axis
                         >
                             <motion.div
                                 className="firstImage"
@@ -107,9 +108,7 @@ const HorizontalScroll = () => {
                         <p style={{ color: 'black' }}>
                             Integrated within both Mobile and Web applications, UniToni facilitates seamless navigation and management of both social and academic aspects of campus life.
                         </p>
-</motion.div>
-
-
+                    </motion.div>
                 </div>
             </div>
         </>
