@@ -28,11 +28,11 @@
     grid-gap: 16vw;
     padding: 0 4rem;
     width: calc(200% + 90vw);
-    margin-top: 350px;
+    margin-top: 300px;
 }
 
 .imageItem {
-    width: 650%;
+    width: 600%;
     height: auto;
     display: flex;
     align-items: center;
