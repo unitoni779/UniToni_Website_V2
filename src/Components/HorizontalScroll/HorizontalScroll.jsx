@@ -30,7 +30,6 @@ const HorizontalScroll = () => {
     const totalImages = 14;
     const progressPerImage = 0.6 / totalImages;
     const [scales, setScales] = useState(Array(totalImages).fill(1));
-    const [currentZoomedImage, setCurrentZoomedImage] = useState(null);
     const [text, setText] = useState("Integrated within both Mobile and Web applications, UniToni facilitates seamless navigation and management of both social and academic aspects of campus life.");
     const [textVisible, setTextVisible] = useState(true);
 
@@ -51,7 +50,6 @@ const HorizontalScroll = () => {
             // Ensure only one image is zoomed
             const zoomedImageIndex = newScales.findIndex(scale => scale === zoomFactor);
             if (zoomedImageIndex !== -1) {
-                setCurrentZoomedImage(zoomedImageIndex);
                 setScales(newScales.map((scale, index) => index === zoomedImageIndex ? zoomFactor : 1));
 
                 // Update the text based on the zoomed image index
@@ -65,7 +63,6 @@ const HorizontalScroll = () => {
             } else {
                 // Default state if no image is zoomed
                 setScales(Array(totalImages).fill(1));
-                setCurrentZoomedImage(null);
                 // Update text visibility based on the scroll position
                 // Hide the text when scrolling past the end of all images
                 if (progress > 0.6) {
