@@ -32,7 +32,7 @@ const HorizontalScroll = () => {
     const [scales, setScales] = useState(Array(totalImages).fill(1));
     const [currentZoomedImage, setCurrentZoomedImage] = useState(null);
     const [text, setText] = useState("Integrated within both Mobile and Web applications, UniToni facilitates seamless navigation and management of both social and academic aspects of campus life.");
-    const [textVisible, setTextVisible] = useState(false);
+    const [textVisible, setTextVisible] = useState(true);
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange((progress) => {
@@ -66,15 +66,18 @@ const HorizontalScroll = () => {
                 // Default state if no image is zoomed
                 setScales(Array(totalImages).fill(1));
                 setCurrentZoomedImage(null);
-                // Clear the text if scrolling past the last zoomed image
-                if (currentZoomedImage >= 6) {
+                // Update text visibility based on the scroll position
+                // Hide the text when scrolling past the end of all images
+                if (progress > 0.6) {
                     setTextVisible(false);
+                } else {
+                    setTextVisible(true);
                 }
             }
         });
 
         return () => unsubscribe();
-    }, [scrollYProgress, scales, zoomFactor, progressPerImage, totalImages, currentZoomedImage]);
+    }, [scrollYProgress, scales, zoomFactor, progressPerImage, totalImages]);
 
     return (
         <div className="carousel" ref={targetRef}>
@@ -91,7 +94,7 @@ const HorizontalScroll = () => {
                             style={{
                                 position: 'absolute',
                                 top: '-50px', // Adjust based on where you want the text to appear relative to the image
-                                left: '120%',
+                                left: '125%',
                                 transform: 'translateX(-50%)',
                                 color: 'black',
                                 fontSize: '1.5rem',
