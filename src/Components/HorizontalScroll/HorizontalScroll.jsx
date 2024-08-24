@@ -76,6 +76,13 @@ const HorizontalScroll = () => {
         return () => unsubscribe();
     }, [scrollYProgress, scales, zoomFactor, progressPerImage, totalImages]);
 
+    // Gradient text style
+    const gradientTextStyle = {
+        background: 'linear-gradient(90deg, #ff9a24, #0087f7)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+    };
+
     return (
         <div className="carousel" ref={targetRef}>
             <div className="contentContainer">
@@ -89,16 +96,16 @@ const HorizontalScroll = () => {
                         <motion.div
                             className="firstImageText font-figtree"
                             style={{
+                                ...gradientTextStyle,
                                 position: 'absolute',
                                 top: '-50px', // Adjust based on where you want the text to appear relative to the image
                                 left: '125%',
                                 transform: 'translateX(-50%)',
-                                color: 'black',
-                                fontSize: '1.5rem',
-                                fontWeight: 'bold',
                                 opacity: textVisibility,
                                 zIndex: '10',
-                                whiteSpace: 'nowrap'
+                                whiteSpace: 'nowrap',
+                                fontSize: '1.5rem',
+                                fontWeight: 'bold',
                             }}
                             transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                         >
@@ -145,6 +152,7 @@ const HorizontalScroll = () => {
                     <motion.div
                         className="textContainer font-figtree"
                         style={{ 
+                            ...gradientTextStyle,
                             opacity: secondTextVisibility,
                             position: 'fixed', // Ensure it's visible regardless of scroll
                             top: '18%', // Adjusted position
@@ -160,7 +168,7 @@ const HorizontalScroll = () => {
                         }}
                         transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                     >
-                        <p style={{ color: 'black' }}>
+                        <p style={{ margin: 0 }}>
                             {text}
                         </p>
                     </motion.div>
