@@ -19,14 +19,20 @@ const HorizontalScroll = () => {
     // Manage opacity of other images based on scroll progress
     const opacityOthers = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
 
-    // Define text visibility based on scroll progress
-    const textVisibility = useTransform(scrollYProgress, [0.1, 0.2], [0, 1]);
+    // Define text visibility, starts visible and fades out when the first image comes down
+    const textVisibility = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
+    // Define visibility for the second text, starts hidden and fades in after the first text fades out
+    const secondTextVisibility = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
 
     // Zoom factor for the images
     const zoomFactor = 1.2;
     const totalImages = 14;
     const progressPerImage = 0.6 / totalImages;
     const [scales, setScales] = useState(Array(totalImages).fill(1));
+    const [currentZoomedImage, setCurrentZoomedImage] = useState(null);
+    const [text, setText] = useState("Integrated within both Mobile and Web applications, UniToni facilitates seamless navigation and management of both social and academic aspects of campus life.");
+    const [textVisible, setTextVisible] = useState(false);
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange((progress) => {
@@ -45,16 +51,30 @@ const HorizontalScroll = () => {
             // Ensure only one image is zoomed
             const zoomedImageIndex = newScales.findIndex(scale => scale === zoomFactor);
             if (zoomedImageIndex !== -1) {
-                // Set all scales to normal size except for the zoomed image
+                setCurrentZoomedImage(zoomedImageIndex);
                 setScales(newScales.map((scale, index) => index === zoomedImageIndex ? zoomFactor : 1));
+
+                // Update the text based on the zoomed image index
+                if (zoomedImageIndex >= 6 && zoomedImageIndex < totalImages) {
+                    setText("Facilitate seamless student-professor communication and access to course materials, exams, and progress tracking through UniToni's LMS for an improved university experience.");
+                    setTextVisible(true);
+                } else if (zoomedImageIndex < 6) {
+                    setText("Integrated within both Mobile and Web applications, UniToni facilitates seamless navigation and management of both social and academic aspects of campus life.");
+                    setTextVisible(true);
+                }
             } else {
                 // Default state if no image is zoomed
                 setScales(Array(totalImages).fill(1));
+                setCurrentZoomedImage(null);
+                // Clear the text if scrolling past the last zoomed image
+                if (currentZoomedImage >= 6) {
+                    setTextVisible(false);
+                }
             }
         });
 
         return () => unsubscribe();
-    }, [scrollYProgress, scales, zoomFactor, progressPerImage]);
+    }, [scrollYProgress, scales, zoomFactor, progressPerImage, totalImages, currentZoomedImage]);
 
     return (
         <div className="carousel" ref={targetRef}>
@@ -65,6 +85,26 @@ const HorizontalScroll = () => {
                         style={{ y: yFirstImage }}
                         transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                     >
+                        {/* First Text - Discover UniToni */}
+                        <motion.div
+                            className="firstImageText font-figtree"
+                            style={{
+                                position: 'absolute',
+                                top: '-50px', // Adjust based on where you want the text to appear relative to the image
+                                left: '120%',
+                                transform: 'translateX(-50%)',
+                                color: 'black',
+                                fontSize: '1.5rem',
+                                fontWeight: 'bold',
+                                opacity: textVisibility,
+                                zIndex: '10',
+                                whiteSpace: 'nowrap'
+                            }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
+                        >
+                            Discover UniToni
+                        </motion.div>
+
                         <motion.div
                             className="firstImage"
                             style={{ scale: scaleFirstImage }}
@@ -76,6 +116,7 @@ const HorizontalScroll = () => {
                             />
                         </motion.div>
                     </motion.div>
+
                     {scales.map((scale, index) => (
                         index === 0 ? null : (
                             <motion.div
@@ -98,28 +139,32 @@ const HorizontalScroll = () => {
                     <div className="spacer"></div>
                     <div className="spacer"></div>
                 </motion.div>
-                {/* Add the text container */}
-                <motion.div
-                    className="textContainer"
-                    style={{ 
-                        opacity: textVisibility,
-                        position: 'fixed', // Ensure it's visible regardless of scroll
-                        top: '20px', // Adjusted position
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        width: '80%',
-                        textAlign: 'center',
-                        padding: '15px',
-                        zIndex: '1000', // Ensure it's above other content
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)', // Semi-transparent background for better readability
-                        borderRadius: '8px' // Rounded corners
-                    }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
-                >
-                    <p style={{ color: 'black' }}>
-                        Integrated within both Mobile and Web applications, UniToni facilitates seamless navigation and management of both social and academic aspects of campus life.
-                    </p>
-                </motion.div>
+
+                {/* Second Text - Changes based on which image is zoomed */}
+                {textVisible && (
+                    <motion.div
+                        className="textContainer font-figtree"
+                        style={{ 
+                            opacity: secondTextVisibility,
+                            position: 'fixed', // Ensure it's visible regardless of scroll
+                            top: '18%', // Adjusted position
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            width: '80%',
+                            textAlign: 'center',
+                            padding: '15px',
+                            fontSize: '1rem',
+                            fontWeight: 'bold',
+                            zIndex: '1000', // Ensure it's above other content
+                            borderRadius: '8px' // Rounded corners
+                        }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
+                    >
+                        <p style={{ color: 'black' }}>
+                            {text}
+                        </p>
+                    </motion.div>
+                )}
             </div>
         </div>
     );
