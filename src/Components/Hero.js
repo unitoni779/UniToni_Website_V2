@@ -16,7 +16,7 @@ const ShuffleHero = () => {
     }, []);
 
     return (
-        <section className="mt-2 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 font-figtree" id='hero'>
+        <section className="mt-0 max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 font-figtree" id='hero'>
             <div className="my-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28 flex flex-col lg:flex-row lg:gap-12">
                 <div className="sm:text-center lg:text-left lg:w-1/2">
                     <h1 className="text-4xl tracking-tight font-bold text-gray-800 sm:text-5xl md:text-6xl">
