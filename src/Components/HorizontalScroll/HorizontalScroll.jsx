@@ -157,7 +157,7 @@ const HorizontalScroll = () => {
                         style={{ 
                             opacity: secondTextVisibility,
                             position: 'fixed', // Ensure it's visible regardless of scroll
-                            top: '13%', // Adjusted position
+                            top: '14%', // Adjusted position
                             left: '50%',
                             transform: 'translateX(-50%)',
                             width: '80%',
