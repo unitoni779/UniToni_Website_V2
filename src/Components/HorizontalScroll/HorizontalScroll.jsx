@@ -98,14 +98,15 @@ const HorizontalScroll = () => {
                             style={{
                                 ...gradientTextStyle,
                                 position: 'absolute',
-                                top: '-50px', // Adjust based on where you want the text to appear relative to the image
-                                left: '125%',
+                                top: '-80px', // Adjust based on where you want the text to appear relative to the image
+                                left: '130%',
                                 transform: 'translateX(-50%)',
                                 opacity: textVisibility,
                                 zIndex: '10',
                                 whiteSpace: 'nowrap',
-                                fontSize: '1.5rem',
-                                fontWeight: 'bold',
+                                  fontSize: '3rem', // Increased font size
+                                    fontWeight: '900', // Maximum standard font weight
+                                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)', // Adds a shadow to enhance boldness
                             }}
                             transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                         >
