@@ -32,6 +32,7 @@ const HorizontalScroll = () => {
     const [scales, setScales] = useState(Array(totalImages).fill(1));
     const [text, setText] = useState("Integrated within both Mobile and Web applications, UniToni facilitates seamless navigation and management of both social and academic aspects of campus life.");
     const [textVisible, setTextVisible] = useState(true);
+    const [zoomedImageIndex, setZoomedImageIndex] = useState(null); // State for zoomed image index
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange((progress) => {
@@ -48,15 +49,17 @@ const HorizontalScroll = () => {
             });
 
             // Ensure only one image is zoomed
-            const zoomedImageIndex = newScales.findIndex(scale => scale === zoomFactor);
-            if (zoomedImageIndex !== -1) {
-                setScales(newScales.map((scale, index) => index === zoomedImageIndex ? zoomFactor : 1));
+            const zoomedIndex = newScales.findIndex(scale => scale === zoomFactor);
+            setZoomedImageIndex(zoomedIndex); // Set zoomed image index state
+
+            if (zoomedIndex !== -1) {
+                setScales(newScales.map((scale, index) => index === zoomedIndex ? zoomFactor : 1));
 
                 // Update the text based on the zoomed image index
-                if (zoomedImageIndex >= 6 && zoomedImageIndex < totalImages) {
+                if (zoomedIndex >= 6 && zoomedIndex < totalImages) {
                     setText("Facilitate seamless student-professor communication and access to course materials, exams, and progress tracking through UniToni's LMS for an improved university experience.");
                     setTextVisible(true);
-                } else if (zoomedImageIndex < 6) {
+                } else if (zoomedIndex < 6) {
                     setText("Integrated within both Mobile and Web applications, UniToni facilitates seamless navigation and management of both social and academic aspects of campus life.");
                     setTextVisible(true);
                 }
@@ -64,7 +67,6 @@ const HorizontalScroll = () => {
                 // Default state if no image is zoomed
                 setScales(Array(totalImages).fill(1));
                 // Update text visibility based on the scroll position
-                // Hide the text when scrolling past the end of all images
                 if (progress > 0.6) {
                     setTextVisible(false);
                 } else {
@@ -98,15 +100,15 @@ const HorizontalScroll = () => {
                             style={{
                                 ...gradientTextStyle,
                                 position: 'absolute',
-                                top: '-80px', // Adjust based on where you want the text to appear relative to the image
+                                top: '-80px',
                                 left: '130%',
                                 transform: 'translateX(-50%)',
                                 opacity: textVisibility,
                                 zIndex: '10',
                                 whiteSpace: 'nowrap',
-                                  fontSize: '3rem', // Increased font size
-                                    fontWeight: '900', // Maximum standard font weight
-                                    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)', // Adds a shadow to enhance boldness
+                                fontSize: '3rem', // Increased font size
+                                fontWeight: '900', // Maximum standard font weight
+                                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)', // Adds a shadow to enhance boldness
                             }}
                             transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                         >
@@ -149,31 +151,39 @@ const HorizontalScroll = () => {
                 </motion.div>
 
                 {/* Second Text - Changes based on which image is zoomed */}
-                {textVisible && (
+                { textVisible && (
                     <motion.div
                         className="textContainer font-figtree"
                         style={{ 
-                            ...gradientTextStyle,
                             opacity: secondTextVisibility,
                             position: 'fixed', // Ensure it's visible regardless of scroll
-                            top: '18%', // Adjusted position
+                            top: '11%', // Adjusted position
                             left: '50%',
                             transform: 'translateX(-50%)',
                             width: '80%',
                             textAlign: 'center',
                             padding: '15px',
-                            fontSize: '1rem',
+                            fontSize: '1.6rem',
                             fontWeight: 'bold',
                             zIndex: '1000', // Ensure it's above other content
-                            borderRadius: '8px' // Rounded corners
+                            borderRadius: '8px', // Rounded corners
                         }}
                         transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                     >
-                        <p style={{ margin: 0 }}>
+                        <p 
+                            style={{ 
+                                margin: 0, 
+                                color: zoomedImageIndex < 6 ? '#112d42' : 'transparent', 
+                                background: zoomedImageIndex >= 6 ? 'linear-gradient(90deg, #ff9a24, #0087f7)' : 'none',
+                                WebkitBackgroundClip: zoomedImageIndex >= 6 ? 'text' : 'none',
+                                WebkitTextFillColor: zoomedImageIndex >= 6 ? 'transparent' : 'none'
+                            }}
+                        >
                             {text}
                         </p>
                     </motion.div>
                 )}
+                
             </div>
         </div>
     );
