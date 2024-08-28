@@ -100,13 +100,13 @@ const HorizontalScroll = () => {
                             style={{
                                 ...gradientTextStyle,
                                 position: 'absolute',
-                                top: '-80px',
+                                top: '-95px',
                                 left: '130%',
                                 transform: 'translateX(-50%)',
                                 opacity: textVisibility,
                                 zIndex: '10',
                                 whiteSpace: 'nowrap',
-                                fontSize: '3rem', // Increased font size
+                                fontSize: '2.5rem', // Increased font size
                                 fontWeight: '900', // Maximum standard font weight
                                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)', // Adds a shadow to enhance boldness
                             }}
