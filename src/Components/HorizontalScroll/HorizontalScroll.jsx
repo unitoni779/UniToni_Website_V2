@@ -16,14 +16,14 @@ const HorizontalScroll = () => {
     // Scale for the first image during its transition
     const scaleFirstImage = useTransform(scrollYProgress, [0, 0.25], [1.1, 1]);
 
+    // Opacity for the "Connect & Engage Campus Life" text
+    const textOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+
+    // Opacity for the "The social part connects..." text
+    const secondTextOpacity = useTransform(scrollYProgress, [0.15, 0.3], [0, 1]);
+
     // Manage opacity of other images based on scroll progress
     const opacityOthers = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
-
-    // Define text visibility, starts visible and fades out when the first image comes down
-    const textVisibility = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-
-    // Define visibility for the second text, starts hidden and fades in after the first text fades out
-    const secondTextVisibility = useTransform(scrollYProgress, [0.2, 0.4], [0, 1]);
 
     // Zoom factor for the images
     const zoomFactor = 1.2;
@@ -32,7 +32,6 @@ const HorizontalScroll = () => {
     const [scales, setScales] = useState(Array(totalImages).fill(1));
     const [text, setText] = useState("The social part connects students, clubs, and activities, bringing university life to its fullest.");
     const [textVisible, setTextVisible] = useState(true);
-    const [zoomedImageIndex, setZoomedImageIndex] = useState(null); // State for zoomed image index
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange((progress) => {
@@ -50,28 +49,21 @@ const HorizontalScroll = () => {
 
             // Ensure only one image is zoomed
             const zoomedIndex = newScales.findIndex(scale => scale === zoomFactor);
-            setZoomedImageIndex(zoomedIndex); // Set zoomed image index state
 
             if (zoomedIndex !== -1) {
                 setScales(newScales.map((scale, index) => index === zoomedIndex ? zoomFactor : 1));
 
                 // Update the text based on the zoomed image index
-                if (zoomedIndex >= 6 && zoomedIndex < totalImages) {
+                if (zoomedIndex >= 7 && zoomedIndex < totalImages) { // s8 to s14
                     setText("With one click, access your academic life—courses, quizzes, and essential tools, all in one place.");
-                    setTextVisible(true);
-                } else if (zoomedIndex < 6) {
+                } else if (zoomedIndex >= 0 && zoomedIndex < 7) { // s1 to s7
                     setText("The social part connects students, clubs, and activities, bringing university life to its fullest.");
-                    setTextVisible(true);
                 }
+
+                setTextVisible(true); // Ensure text remains visible
             } else {
-                // Default state if no image is zoomed
                 setScales(Array(totalImages).fill(1));
-                // Update text visibility based on the scroll position
-                if (progress > 0.6) {
-                    setTextVisible(false);
-                } else {
-                    setTextVisible(true);
-                }
+                setTextVisible(false); // Hide text when no image is zoomed
             }
         });
 
@@ -94,7 +86,7 @@ const HorizontalScroll = () => {
                         style={{ y: yFirstImage }}
                         transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                     >
-                        {/* First Text - Discover UniToni */}
+                        {/* First Text - Connect & Engage Campus Life */}
                         <motion.div
                             className="firstImageText font-figtree"
                             style={{
@@ -103,7 +95,7 @@ const HorizontalScroll = () => {
                                 top: '-95px',
                                 left: '130%',
                                 transform: 'translateX(-50%)',
-                                opacity: textVisibility,
+                                opacity: textOpacity, // Control opacity based on scroll
                                 zIndex: '10',
                                 whiteSpace: 'nowrap',
                                 fontSize: '2.5rem', // Increased font size
@@ -150,12 +142,11 @@ const HorizontalScroll = () => {
                     <div className="spacer"></div>
                 </motion.div>
 
-                {/* Second Text - Changes based on which image is zoomed */}
-                { textVisible && (
+                {/* Second Text - The social part connects... */}
+                {textVisible && (
                     <motion.div
                         className="textContainer font-figtree"
                         style={{ 
-                            opacity: secondTextVisibility,
                             position: 'fixed', // Ensure it's visible regardless of scroll
                             top: '14%', // Adjusted position
                             left: '50%',
@@ -173,10 +164,10 @@ const HorizontalScroll = () => {
                         <p 
                             style={{ 
                                 margin: 0, 
-                                color: zoomedImageIndex < 6 ? '#112d42' : 'transparent', 
-                                background: zoomedImageIndex >= 6 ? 'linear-gradient(90deg, #ff9a24, #0087f7)' : 'none',
-                                WebkitBackgroundClip: zoomedImageIndex >= 6 ? 'text' : 'none',
-                                WebkitTextFillColor: zoomedImageIndex >= 6 ? 'transparent' : 'none'
+                                color: text.includes('social part') ? '#112d42' : 'transparent', 
+                                background: text.includes('social part') ? 'none' : 'linear-gradient(90deg, #ff9a24, #0087f7)',
+                                WebkitBackgroundClip: text.includes('social part') ? 'none' : 'text',
+                                WebkitTextFillColor: text.includes('social part') ? 'inherit' : 'transparent'
                             }}
                         >
                             {text}
@@ -184,6 +175,8 @@ const HorizontalScroll = () => {
                     </motion.div>
                 )}
                 
+                {/* Additional Text to appear after the first disappears */}
+              
             </div>
         </div>
     );
