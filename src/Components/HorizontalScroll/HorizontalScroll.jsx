@@ -19,8 +19,6 @@ const HorizontalScroll = () => {
     // Opacity for the "Connect & Engage Campus Life" text
     const textOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
-    // Opacity for the "The social part connects..." text
-    const secondTextOpacity = useTransform(scrollYProgress, [0.15, 0.3], [0, 1]);
 
     // Manage opacity of other images based on scroll progress
     const opacityOthers = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
