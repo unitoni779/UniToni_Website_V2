@@ -30,7 +30,7 @@ const HorizontalScroll = () => {
     const totalImages = 14;
     const progressPerImage = 0.6 / totalImages;
     const [scales, setScales] = useState(Array(totalImages).fill(1));
-    const [text, setText] = useState("Integrated within both Mobile and Web applications, UniToni facilitates seamless navigation and management of both social and academic aspects of campus life.");
+    const [text, setText] = useState("The social part connects students, clubs, and activities, bringing university life to its fullest.");
     const [textVisible, setTextVisible] = useState(true);
     const [zoomedImageIndex, setZoomedImageIndex] = useState(null); // State for zoomed image index
 
@@ -57,10 +57,10 @@ const HorizontalScroll = () => {
 
                 // Update the text based on the zoomed image index
                 if (zoomedIndex >= 6 && zoomedIndex < totalImages) {
-                    setText("Facilitate seamless student-professor communication and access to course materials, exams, and progress tracking through UniToni's LMS for an improved university experience.");
+                    setText("With one click, access your academic life—courses, quizzes, and essential tools, all in one place.");
                     setTextVisible(true);
                 } else if (zoomedIndex < 6) {
-                    setText("Integrated within both Mobile and Web applications, UniToni facilitates seamless navigation and management of both social and academic aspects of campus life.");
+                    setText("The social part connects students, clubs, and activities, bringing university life to its fullest.");
                     setTextVisible(true);
                 }
             } else {
@@ -112,7 +112,7 @@ const HorizontalScroll = () => {
                             }}
                             transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                         >
-                            Discover UniToni
+                            Connect & Engage Campus Life
                         </motion.div>
 
                         <motion.div
