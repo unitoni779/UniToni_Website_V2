@@ -19,9 +19,6 @@ const HorizontalScroll = () => {
     // Opacity for the "Connect & Engage Campus Life" text
     const textOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
 
-    // Opacity for the "The social part connects..." text
-    const secondTextOpacity = useTransform(scrollYProgress, [0.15, 0.3], [0, 1]);
-
     // Manage opacity of other images based on scroll progress
     const opacityOthers = useTransform(scrollYProgress, [0, 0.25], [0, 1]);
 
@@ -30,8 +27,8 @@ const HorizontalScroll = () => {
     const totalImages = 14;
     const progressPerImage = 0.6 / totalImages;
     const [scales, setScales] = useState(Array(totalImages).fill(1));
-    const [text, setText] = useState("The social part connects students, clubs, and activities, bringing university life to its fullest.");
-    const [textVisible, setTextVisible] = useState(true);
+    const [text, setText] = useState("");
+    const [textVisible, setTextVisible] = useState(false);
 
     useEffect(() => {
         const unsubscribe = scrollYProgress.onChange((progress) => {
@@ -54,10 +51,10 @@ const HorizontalScroll = () => {
                 setScales(newScales.map((scale, index) => index === zoomedIndex ? zoomFactor : 1));
 
                 // Update the text based on the zoomed image index
-                if (zoomedIndex >= 7 && zoomedIndex < totalImages) { // s8 to s14
-                    setText("With one click, access your academic life—courses, quizzes, and essential tools, all in one place.");
-                } else if (zoomedIndex >= 0 && zoomedIndex < 7) { // s1 to s7
+                if (zoomedIndex >= 0 && zoomedIndex < 7) { // s1 to s7
                     setText("The social part connects students, clubs, and activities, bringing university life to its fullest.");
+                } else if (zoomedIndex >= 7 && zoomedIndex < totalImages) { // s8 to s14
+                    setText("With one click, access your academic life—courses, quizzes, and essential tools, all in one place.");
                 }
 
                 setTextVisible(true); // Ensure text remains visible
@@ -70,11 +67,16 @@ const HorizontalScroll = () => {
         return () => unsubscribe();
     }, [scrollYProgress, scales, zoomFactor, progressPerImage, totalImages]);
 
-    // Gradient text style
+    // Gradient text style for the second text
     const gradientTextStyle = {
         background: 'linear-gradient(90deg, #ff9a24, #0087f7)',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
+    };
+
+    // Text color style for the first text
+    const textColorStyle = {
+        color: '#112d42',
     };
 
     return (
@@ -161,22 +163,11 @@ const HorizontalScroll = () => {
                         }}
                         transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                     >
-                        <p 
-                            style={{ 
-                                margin: 0, 
-                                color: text.includes('social part') ? '#112d42' : 'transparent', 
-                                background: text.includes('social part') ? 'none' : 'linear-gradient(90deg, #ff9a24, #0087f7)',
-                                WebkitBackgroundClip: text.includes('social part') ? 'none' : 'text',
-                                WebkitTextFillColor: text.includes('social part') ? 'inherit' : 'transparent'
-                            }}
-                        >
+                        <p style={text.includes('With one click') ? gradientTextStyle : textColorStyle}>
                             {text}
                         </p>
                     </motion.div>
                 )}
-                
-                {/* Additional Text to appear after the first disappears */}
-              
             </div>
         </div>
     );
