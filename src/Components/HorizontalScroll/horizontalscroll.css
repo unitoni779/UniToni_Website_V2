@@ -71,16 +71,16 @@
         display: inline-flex; /* Ensure horizontal alignment */
         width: auto; /* Allow width to expand based on content */
         margin-top: 400px;
+        grid-gap: 0;
     }
 .firstImageWrapper{
-    margin-left: -410px !important;
+    margin-left: -360px !important;
 }
 .firstImageText {
 
     position: absolute;
     top: -95px;
-    left: 30% !important;
-   
+    left: 40% !important;
     font-size: 1.3rem !important;
  
 }
