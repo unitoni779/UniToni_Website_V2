@@ -57,3 +57,41 @@
     border-radius: 5px;
     z-index: 10; /* Ensure text is above images */
 }
+
+
+@media (max-width: 480px) {
+    .firstImage {
+        width: 220px;
+        height: 100px;
+        margin-left: 0%;
+        position: relative;
+        transform: scale(1);
+    }
+    .images {
+        display: inline-flex; /* Ensure horizontal alignment */
+        width: auto; /* Allow width to expand based on content */
+        margin-top: 400px;
+    }
+.firstImageWrapper{
+    margin-left: -410px !important;
+}
+.firstImageText {
+
+    position: absolute;
+    top: -95px;
+    left: 30% !important;
+   
+    font-size: 1.3rem !important;
+ 
+}
+
+.imageItem {
+    width: 150px; /* Adjust width for smaller screens */
+    margin-right: 10vw; /* Adjust space between images */
+    margin-left: 100px;
+}
+
+.emptySpace {
+    width: 550px; /* Adjust width for smaller screens */
+}
+}
