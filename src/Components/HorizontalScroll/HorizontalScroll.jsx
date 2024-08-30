@@ -89,6 +89,7 @@ const HorizontalScroll = () => {
                         transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                     >
                         {/* First Text - Connect & Engage Campus Life */}
+                        
                         <motion.div
                             className="firstImageText font-figtree"
                             style={{

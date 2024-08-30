@@ -3,6 +3,7 @@ import tasarim from '../assets/images/freepik-new-project-20240710002811vXlb.png
 import app from '../assets/images/app2.png';
 import google from '../assets/images/google.png';
 import { Link } from 'react-router-dom';
+import '../App.css'
 
 const ShuffleHero = () => {
     const [isTextChanged, setIsTextChanged] = useState(false);
