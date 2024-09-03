@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./horizontalscroll.css";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import ImageContainer from "../ImageContainer/ImageContainer";
 
 const HorizontalScroll = () => {
@@ -88,11 +88,10 @@ const HorizontalScroll = () => {
                         style={{ y: yFirstImage }}
                         transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                     >
-                        {/* First Text - Connect & Engage Campus Life */}
-                        
+                        {/* First Image and its text */}
                         <motion.div
                             className="firstImageText font-figtree"
-                            style={{
+                              style={{
                                 ...gradientTextStyle,
                                 position: 'absolute',
                                 top: '-95px',
@@ -145,30 +144,36 @@ const HorizontalScroll = () => {
                     <div className="spacer"></div>
                 </motion.div>
 
-                {/* Second Text - The social part connects... */}
-                {textVisible && (
-                    <motion.div
-                        className="textContainer font-figtree"
-                        style={{ 
-                            position: 'fixed', // Ensure it's visible regardless of scroll
-                            top: '14%', // Adjusted position
-                            left: '50%',
-                            transform: 'translateX(-50%)',
-                            width: '80%',
-                            textAlign: 'center',
-                            padding: '15px',
-                            fontSize: '1.6rem',
-                            fontWeight: 'bold',
-                            zIndex: '1000', // Ensure it's above other content
-                            borderRadius: '8px', // Rounded corners
-                        }}
-                        transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
-                    >
-                        <p style={text.includes('With one click') ? gradientTextStyle : textColorStyle}>
-                            {text}
-                        </p>
-                    </motion.div>
-                )}
+                {/* Text Transition Animation */}
+                <AnimatePresence>
+                    {textVisible && (
+                        <motion.div
+                            className="textContainer font-figtree"
+                            style={{ 
+                                position: 'fixed', // Ensure it's visible regardless of scroll
+                                top: '15%', // Center vertically
+                                left: '10%', // Center horizontally
+                                transform: 'translate(-50%, -50%)', // Adjust for centering
+                                width: '80%',
+                                textAlign: 'center',
+                                padding: '15px',
+                                fontSize: '1.6rem',
+                                fontWeight: 'bold',
+                                zIndex: '1000', // Ensure it's above other content
+                                borderRadius: '8px', // Rounded corners
+                            }}
+                            key={text} // Use text as the key to trigger animation
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
+                        >
+                            <p style={text.includes('With one click') ? gradientTextStyle : textColorStyle}>
+                                {text}
+                            </p>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );

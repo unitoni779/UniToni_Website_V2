@@ -87,7 +87,7 @@
 }
 
 .imageItem {
-    width: 150px; /* Adjust width for smaller screens */
+    width: 220px; /* Adjust width for smaller screens */
     margin-right: 10vw; /* Adjust space between images */
     margin-left: 100px;
 }
