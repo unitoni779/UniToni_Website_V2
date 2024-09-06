@@ -70,9 +70,7 @@ const HorizontalScroll = () => {
                     setText("The social part connects students, clubs, and activities, bringing university life to its fullest.");
                 } else if (zoomedIndex >= 7 && zoomedIndex < totalImages) { // s8 to s14
                     setText(
-                        isMobile
-                            ? "With one click, access your academic life—courses, quizzes, and essential tools, all in one place."
-                            : "With one click, access your academic life—courses, quizzes, and essential tools,<br />all in one place."
+                        "With one click, access your academic life—courses, quizzes, and essential tools,<br />all in one place."
                     );
                 }
 
@@ -84,9 +82,9 @@ const HorizontalScroll = () => {
         });
 
         return () => unsubscribe();
-    }, [scrollYProgress, scales, zoomFactor, progressPerImage, totalImages, isMobile]);
+    }, [scrollYProgress, scales, zoomFactor, progressPerImage, totalImages]);
 
-    // Gradient text style for the second text
+    // Gradient text style for all text, applied to both mobile and non-mobile
     const gradientTextStyle = {
         background: 'linear-gradient(90deg, #ff9a24, #0087f7)',
         WebkitBackgroundClip: 'text',
@@ -180,7 +178,7 @@ const HorizontalScroll = () => {
                                 fontWeight: 'bold',
                                 zIndex: '1000', // Ensure it's above other content
                                 borderRadius: '8px', // Rounded corners
-                                ...((text.includes("With one click") && !isMobile) ? gradientTextStyle : textColorStyle) // Apply gradient or text color style based on text content
+                                ...gradientTextStyle // Apply gradient style
                             }}
                             key={text} // Use text as the key to trigger animation
                             initial={{ opacity: 0, y: 20 }}
