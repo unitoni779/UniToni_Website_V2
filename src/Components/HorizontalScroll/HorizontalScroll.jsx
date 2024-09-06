@@ -15,8 +15,12 @@ const HorizontalScroll = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // X-axis transform for horizontal scrolling
-    const x = useTransform(scrollYProgress, [0.3, 1], ["10%", "-95%"]);
+    // X-axis transform for horizontal scrolling based on device type
+    const x = useTransform(
+        scrollYProgress,
+        [0.3, 1],
+        isMobile ? ["10%", "-95%"] : ["10%", "-70%"]
+    );
 
     // Y-axis transform for the first image, starts higher and moves down smoothly
     const yFirstImage = useTransform(scrollYProgress, [0, 0.25], ["-150px", "0px"]);
