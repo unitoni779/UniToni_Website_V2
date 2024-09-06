@@ -16,7 +16,7 @@ const HorizontalScroll = () => {
     }, []);
 
     // Scrolling speed factor based on device type
-    const scrollSpeedFactor = isMobile ? 0.7 : 1;
+    const scrollSpeedFactor = isMobile ? 0.5 : 1;
 
     // X-axis transform for horizontal scrolling based on device type
     const x = useTransform(
