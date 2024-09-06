@@ -22,7 +22,7 @@ const HorizontalScroll = () => {
     const x = useTransform(
         scrollYProgress,
         [0.3, 1],
-        isMobile ? ["10%", `-${150 * scrollSpeedFactor}%`] : ["10%", `-${70 * scrollSpeedFactor}%`]
+        isMobile ? ["10%", `-${135 * scrollSpeedFactor}%`] : ["10%", `-${70 * scrollSpeedFactor}%`]
     );
 
     // Y-axis transform for the first image, starts higher and moves down smoothly
