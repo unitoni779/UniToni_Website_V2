@@ -23,7 +23,7 @@ const HorizontalScroll = () => {
    const x = useTransform(
     scrollYProgress,
     [0.2, 1],  // Adjust the range for more gradual scrolling
-    isMobile ? ["10%", `-${295 * scrollSpeedFactor}%`] : ["10%", `-${70 * scrollSpeedFactor}%`]
+    isMobile ? ["10%", `-${310 * scrollSpeedFactor}%`] : ["10%", `-${70 * scrollSpeedFactor}%`]
 );
 
 
