@@ -76,7 +76,7 @@
     .firstImage {
         width: 220px;
         height: 100px;
-        margin-left: -45%;
+        margin-left: -40%;
         position: relative;
         transform: scale(1);
     }
