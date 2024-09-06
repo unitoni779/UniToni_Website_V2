@@ -60,6 +60,19 @@
 
 
 @media (max-width: 480px) {
+    .textContainer {
+        position: absolute;
+        top: 10px; /* Adjust as needed */
+        left: 0% !important;
+        transform: translateX(-50%);
+        width: 80%; /* Adjust width as needed */
+        text-align: center;
+        background:transparent; /* Semi-transparent background */
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 10; /* Ensure text is above images */
+    }
+    
     .firstImage {
         width: 220px;
         height: 100px;

@@ -8,7 +8,7 @@ const HorizontalScroll = () => {
     const { scrollYProgress } = useScroll({ target: targetRef });
 
     // X-axis transform for horizontal scrolling
-    const x = useTransform(scrollYProgress, [0.3, 1], ["10%", "-70%"]);
+    const x = useTransform(scrollYProgress, [0.3, 1], ["10%", "-95%"]);
 
     // Y-axis transform for the first image, starts higher and moves down smoothly
     const yFirstImage = useTransform(scrollYProgress, [0, 0.25], ["-150px", "0px"]);
