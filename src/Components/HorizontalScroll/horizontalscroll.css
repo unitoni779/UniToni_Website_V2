@@ -76,7 +76,7 @@
     .firstImage {
         width: 220px;
         height: 100px;
-        margin-left: -25%;
+        margin-left: -20%;
         position: relative;
         transform: scale(1);
     }
@@ -91,14 +91,15 @@
     margin-left: -360px !important;
 }
 .firstImageText {
+    font-size: 1.5rem !important; /* Desired font size */
 
-    position: absolute;
-    top: -95px;
-    left: 20% !important;
-    font-size: 1.3rem !important;
- 
+    text-align: center !important; /* Center text */
+    left: 30% !important; /* Center horizontally */
+    transform: translateX(-50%) !important; /* Keep centered */
+    max-width: 90% !important; /* Adjust width to fit two lines */
+    line-height: 1.4 !important; /* Adjust line spacing for readability */
+    padding: 0 0; /* Add some padding to avoid edge clipping */
 }
-
 .imageItem {
     width: 220px; /* Adjust width for smaller screens */
     margin-right: 10vw; /* Adjust space between images */

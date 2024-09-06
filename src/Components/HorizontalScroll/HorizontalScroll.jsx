@@ -6,6 +6,14 @@ import ImageContainer from "../ImageContainer/ImageContainer";
 const HorizontalScroll = () => {
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({ target: targetRef });
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 480);
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     // X-axis transform for horizontal scrolling
     const x = useTransform(scrollYProgress, [0.3, 1], ["10%", "-95%"]);
@@ -90,24 +98,24 @@ const HorizontalScroll = () => {
                     >
                         {/* First Image and its text */}
                         <motion.div
-                            className="firstImageText font-figtree"
-                              style={{
-                                ...gradientTextStyle,
-                                position: 'absolute',
-                                top: '-95px',
-                                left: '130%',
-                                transform: 'translateX(-50%)',
-                                opacity: textOpacity, // Control opacity based on scroll
-                                zIndex: '10',
-                                whiteSpace: 'nowrap',
-                                fontSize: '2.5rem', // Increased font size
-                                fontWeight: '900', // Maximum standard font weight
-                                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)', // Adds a shadow to enhance boldness
-                            }}
-                            transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
-                        >
-                            Connect & Engage Campus Life
-                        </motion.div>
+    className="firstImageText font-figtree"
+    style={{
+        ...gradientTextStyle,
+        position: 'absolute',
+        top: '-95px',
+        left: '130%',
+        transform: 'translateX(-50%)',
+        opacity: textOpacity,
+        zIndex: '10',
+        whiteSpace: 'nowrap', // Prevents wrapping on large screens
+        fontSize: '2.5rem',
+        fontWeight: '900',
+        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
+    }}
+    transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
+>
+Connect &Engage {isMobile ? <br /> : null}Campus Life
+</motion.div>
 
                         <motion.div
                             className="firstImage"
