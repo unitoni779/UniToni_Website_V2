@@ -76,7 +76,7 @@
     .firstImage {
         width: 220px;
         height: 100px;
-        margin-left: 0%;
+        margin-left: -25%;
         position: relative;
         transform: scale(1);
     }
@@ -94,7 +94,7 @@
 
     position: absolute;
     top: -95px;
-    left: 40% !important;
+    left: 20% !important;
     font-size: 1.3rem !important;
  
 }
