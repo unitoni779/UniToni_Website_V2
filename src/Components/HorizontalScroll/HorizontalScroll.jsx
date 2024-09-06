@@ -62,7 +62,11 @@ const HorizontalScroll = () => {
                 if (zoomedIndex >= 0 && zoomedIndex < 7) { // s1 to s7
                     setText("The social part connects students, clubs, and activities, bringing university life to its fullest.");
                 } else if (zoomedIndex >= 7 && zoomedIndex < totalImages) { // s8 to s14
-                    setText("With one click, access your academic life—courses, quizzes, and essential tools, all in one place.");
+                    setText(
+                        isMobile
+                            ? "With one click, access your academic life—courses, quizzes, and essential tools, all in one place."
+                            : "With one click, access your academic life—courses, quizzes, and essential tools,<br />all in one place."
+                    );
                 }
 
                 setTextVisible(true); // Ensure text remains visible
@@ -73,7 +77,7 @@ const HorizontalScroll = () => {
         });
 
         return () => unsubscribe();
-    }, [scrollYProgress, scales, zoomFactor, progressPerImage, totalImages]);
+    }, [scrollYProgress, scales, zoomFactor, progressPerImage, totalImages, isMobile]);
 
     // Gradient text style for the second text
     const gradientTextStyle = {
@@ -98,24 +102,24 @@ const HorizontalScroll = () => {
                     >
                         {/* First Image and its text */}
                         <motion.div
-    className="firstImageText font-figtree"
-    style={{
-        ...gradientTextStyle,
-        position: 'absolute',
-        top: '-95px',
-        left: '130%',
-        transform: 'translateX(-50%)',
-        opacity: textOpacity,
-        zIndex: '10',
-        whiteSpace: 'nowrap', // Prevents wrapping on large screens
-        fontSize: '2.5rem',
-        fontWeight: '900',
-        textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
-    }}
-    transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
->
-Connect &Engage {isMobile ? <br /> : null}Campus Life
-</motion.div>
+                            className="firstImageText font-figtree"
+                            style={{
+                                ...gradientTextStyle,
+                                position: 'absolute',
+                                top: '-95px',
+                                left: '130%',
+                                transform: 'translateX(-50%)',
+                                opacity: textOpacity,
+                                zIndex: '10',
+                                whiteSpace: 'nowrap', // Prevents wrapping on large screens
+                                fontSize: '2.5rem',
+                                fontWeight: '900',
+                                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
+                            }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
+                        >
+                            Connect & Engage {isMobile ? <br /> : null} Campus Life
+                        </motion.div>
 
                         <motion.div
                             className="firstImage"
@@ -169,17 +173,15 @@ Connect &Engage {isMobile ? <br /> : null}Campus Life
                                 fontWeight: 'bold',
                                 zIndex: '1000', // Ensure it's above other content
                                 borderRadius: '8px', // Rounded corners
+                                ...((text.includes("With one click") && !isMobile) ? gradientTextStyle : textColorStyle) // Apply gradient or text color style based on text content
                             }}
                             key={text} // Use text as the key to trigger animation
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
-                        >
-                            <p style={text.includes('With one click') ? gradientTextStyle : textColorStyle}>
-                                {text}
-                            </p>
-                        </motion.div>
+                            dangerouslySetInnerHTML={{ __html: text }} // Render HTML with line break
+                        />
                     )}
                 </AnimatePresence>
             </div>
