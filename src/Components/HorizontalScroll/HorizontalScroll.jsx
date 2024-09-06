@@ -91,11 +91,6 @@ const HorizontalScroll = () => {
         WebkitTextFillColor: 'transparent',
     };
 
-    // Text color style for the first text
-    const textColorStyle = {
-        color: '#112d42',
-    };
-
     return (
         <div className="carousel" ref={targetRef}>
             <div className="contentContainer">
