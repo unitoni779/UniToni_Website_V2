@@ -63,7 +63,7 @@
     .textContainer {
         position: absolute;
         top: 10px; /* Adjust as needed */
-        left: 0% !important;
+      
         transform: translateX(-50%);
         width: 80%; /* Adjust width as needed */
         text-align: center;
