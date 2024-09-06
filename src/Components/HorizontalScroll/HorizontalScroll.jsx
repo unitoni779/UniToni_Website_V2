@@ -84,11 +84,16 @@ const HorizontalScroll = () => {
         return () => unsubscribe();
     }, [scrollYProgress, scales, zoomFactor, progressPerImage, totalImages]);
 
-    // Gradient text style for all text, applied to both mobile and non-mobile
+    // Gradient text style for the first image
     const gradientTextStyle = {
         background: 'linear-gradient(90deg, #ff9a24, #0087f7)',
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
+    };
+
+    // Style for the specific text in color #112d42
+    const textColorStyle = {
+        color: '#112d42',
     };
 
     return (
@@ -111,7 +116,7 @@ const HorizontalScroll = () => {
                                 transform: 'translateX(-50%)',
                                 opacity: textOpacity,
                                 zIndex: '10',
-                                whiteSpace: 'nowrap', // Prevents wrapping on large screens
+                                whiteSpace: 'nowrap',
                                 fontSize: '2.5rem',
                                 fontWeight: '900',
                                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
@@ -161,26 +166,29 @@ const HorizontalScroll = () => {
                     {textVisible && (
                         <motion.div
                             className="textContainer font-figtree"
-                            style={{ 
-                                position: 'fixed', // Ensure it's visible regardless of scroll
-                                top: '15%', // Center vertically
-                                left: '10%', // Center horizontally
-                                transform: 'translate(-50%, -50%)', // Adjust for centering
+                            style={{
+                                position: 'fixed', 
+                                top: '15%', 
+                                left: '10%',
+                                transform: 'translate(-50%, -50%)',
                                 width: '80%',
                                 textAlign: 'center',
                                 padding: '15px',
                                 fontSize: '1.6rem',
                                 fontWeight: 'bold',
-                                zIndex: '1000', // Ensure it's above other content
-                                borderRadius: '8px', // Rounded corners
-                                ...gradientTextStyle // Apply gradient style
+                                zIndex: '1000',
+                                borderRadius: '8px',
+                                // Apply textColorStyle only to the first set of text
+                                ...(text === "The social part connects students, clubs, and activities, bringing university life to its fullest."
+                                    ? textColorStyle
+                                    : gradientTextStyle)
                             }}
-                            key={text} // Use text as the key to trigger animation
+                            key={text}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
                             transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
-                            dangerouslySetInnerHTML={{ __html: text }} // Render HTML with line break
+                            dangerouslySetInnerHTML={{ __html: text }}
                         />
                     )}
                 </AnimatePresence>
