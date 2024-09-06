@@ -22,7 +22,7 @@ const HorizontalScroll = () => {
    // X-axis transform for horizontal scrolling based on device type
    const x = useTransform(
     scrollYProgress,
-    [0.2, 1],  // Adjust the range for more gradual scrolling
+    [0.2, 1.5],  // Adjust the range for more gradual scrolling
     isMobile ? ["10%", `-${310 * scrollSpeedFactor}%`] : ["10%", `-${70 * scrollSpeedFactor}%`]
 );
 
@@ -105,7 +105,7 @@ const HorizontalScroll = () => {
                     <motion.div
                         className="firstImageWrapper"
                         style={{ y: yFirstImage }}
-                        transition={{ type: 'spring', stiffness: 200, damping: 50, ease: 'easeInOut' }}
+                        transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                     >
                         {/* First Image and its text */}
                         <motion.div
@@ -123,7 +123,7 @@ const HorizontalScroll = () => {
                                 fontWeight: '900',
                                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
                             }}
-                            transition={{ type: 'spring', stiffness: 200, damping: 50, ease: 'easeInOut' }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                         >
                             Connect & Engage {isMobile ? <br /> : null} Campus Life
                         </motion.div>
@@ -131,7 +131,7 @@ const HorizontalScroll = () => {
                         <motion.div
                             className="firstImage"
                             style={{ scale: scaleFirstImage }}
-                            transition={{ type: 'spring', stiffness: 200, damping: 50, ease: 'easeInOut' }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                         >
                             <ImageContainer
                                 imageSource={require('../../Screens/s1.png')}
@@ -189,7 +189,7 @@ const HorizontalScroll = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -20 }}
-                            transition={{ type: 'spring', stiffness: 200, damping: 50, ease: 'easeInOut' }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
                             dangerouslySetInnerHTML={{ __html: text }}
                         />
                     )}
