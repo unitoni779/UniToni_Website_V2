@@ -94,7 +94,7 @@
     font-size: 1.5rem !important; /* Desired font size */
 
     text-align: center !important; /* Center text */
-    left: 20% !important; /* Center horizontally */
+    left: 15% !important; /* Center horizontally */
     transform: translateX(-50%) !important; /* Keep centered */
     max-width: 90% !important; /* Adjust width to fit two lines */
     line-height: 1.4 !important; /* Adjust line spacing for readability */
