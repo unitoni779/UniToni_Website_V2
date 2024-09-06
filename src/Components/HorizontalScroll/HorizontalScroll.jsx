@@ -16,13 +16,13 @@ const HorizontalScroll = () => {
     }, []);
 
     // Scrolling speed factor based on device type
-    const scrollSpeedFactor = isMobile ? 0.3 : 1;
+    const scrollSpeedFactor = isMobile ? 0.7 : 1;
 
     // X-axis transform for horizontal scrolling based on device type
     const x = useTransform(
         scrollYProgress,
         [0.3, 1],
-        isMobile ? ["10%", `-$245 * scrollSpeedFactor}%`] : ["10%", `-${70 * scrollSpeedFactor}%`]
+        isMobile ? ["10%", `-${135 * scrollSpeedFactor}%`] : ["10%", `-${70 * scrollSpeedFactor}%`]
     );
 
     // Y-axis transform for the first image, starts higher and moves down smoothly
