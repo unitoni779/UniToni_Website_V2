@@ -62,7 +62,7 @@
 @media (max-width: 480px) {
     .carousel {
         background-color: white;
-        height: 900vh;
+        height: 700vh;
     }
     .textContainer {
         position: absolute;
