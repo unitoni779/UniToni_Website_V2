@@ -100,7 +100,7 @@
     text-align: center !important; /* Center text */
     left: 5% !important; /* Center horizontally */
     transform: translateX(-50%) !important; /* Keep centered */
-    max-width: 90% !important; /* Adjust width to fit two lines */
+    max-width: 120% !important; /* Adjust width to fit two lines */
     line-height: 1.4 !important; /* Adjust line spacing for readability */
     padding: 0 0; /* Add some padding to avoid edge clipping */
 }
