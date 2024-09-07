@@ -60,6 +60,10 @@
 
 
 @media (max-width: 480px) {
+    .carousel {
+        background-color: white;
+        height: 500vh;
+    }
     .textContainer {
         position: absolute;
         top: 10px; /* Adjust as needed */
