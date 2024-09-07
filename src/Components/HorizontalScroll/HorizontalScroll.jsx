@@ -26,7 +26,7 @@ const HorizontalScroll = () => {
     );
 
     // Y-axis transform for the first image, starts higher and moves down smoothly
-    const yFirstImage = useTransform(scrollYProgress, [0, 0.25], ["-150px", "0px"]);
+    const yFirstImage = useTransform(scrollYProgress, [0, 0.15], ["-150px", "0px"]);
 
     // Scale for the first image during its transition
     const scaleFirstImage = useTransform(scrollYProgress, [0, 0.25], [1.1, 1]);
@@ -103,7 +103,7 @@ const HorizontalScroll = () => {
                     <motion.div
                         className="firstImageWrapper"
                         style={{ y: yFirstImage }}
-                        transition={{ type: 'spring', stiffness: 300, damping: 25, ease: 'easeInOut' }}
+                        transition={{ type: 'spring', stiffness: 400, damping: 20, ease: 'easeInOut' }}
                     >
                         {/* First Image and its text */}
                         <motion.div
