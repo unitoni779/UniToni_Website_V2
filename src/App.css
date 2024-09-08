@@ -47,4 +47,61 @@ body {
 @media (max-width: 480px) {
     #hero {
       margin-top: 50px;
-    }}
+    }
+    body {
+        font-family: 'Figtree', Arial, sans-serif;
+        font-weight: 400; /* Default weight */
+    }
+}
+
+    /* iPhone 12 and Above */
+@media only screen and (min-device-width: 390px) and (max-device-width: 428px) and (orientation: portrait) {
+    /* Styles for iPhone 12/13/14 in portrait mode */
+    body {
+        font-family: 'Figtree', Arial, sans-serif;
+        font-weight: 400; /* Default weight */
+    }
+}
+
+/* Landscape Mode */
+@media only screen and (min-device-width: 390px) and (max-device-width: 428px) and (orientation: landscape) {
+    /* Styles for iPhone 12/13/14 in landscape mode */
+    body {
+        font-family: 'Figtree', Arial, sans-serif;
+        font-weight: 400; /* Default weight */
+    }
+}
+
+/* iPhone X, XS, XR */
+@media only screen and (min-device-width: 375px) and (max-device-width: 414px) and (orientation: portrait) {
+    /* Styles for iPhone X, XS, XR in portrait mode */
+    body {
+        font-family: 'Figtree', Arial, sans-serif;
+        font-weight: 400; /* Default weight */
+    }
+}
+
+/* Landscape Mode */
+@media only screen and (min-device-width: 375px) and (max-device-width: 414px) and (orientation: landscape) {
+    /* Styles for iPhone X, XS, XR in landscape mode */
+    body {
+        font-family: 'Figtree', Arial, sans-serif;
+        font-weight: 400; /* Default weight */
+    }
+}
+/* iPhone 6, 7, 8 */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: portrait) {
+    /* Styles for iPhone 6, 7, 8 in portrait mode */
+    body {
+        font-family: 'Figtree', Arial, sans-serif;
+        font-weight: 400; /* Default weight */
+    }
+}
+
+/* Landscape Mode */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+    body {
+        font-family: 'Figtree', Arial, sans-serif;
+        font-weight: 400; /* Default weight */
+    }
+}
