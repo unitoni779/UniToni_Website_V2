@@ -1,0 +1,116 @@
+.firstImage {
+    width: 220px; /* Adjust as needed */
+    height: 100px;
+    margin-left: 80%; /* Align with other images */
+    position: relative;
+    transform: scale(1);
+}
+
+.carousel {
+    background-color: white;
+    height: 600vh;
+}
+
+.contentContainer {
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 16vw;
+    padding: 0 4rem;
+    width: calc(200% + 90vw);
+    margin-top: 250px;
+}
+
+.imageItem {
+    width: 600%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Ensure the scale is applied smoothly */
+    transition: transform 0.8s ease-in-out;
+}
+
+.emptySpace {
+    width: 750%; 
+    height: auto;
+}
+.textContainer {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Adjust width as needed */
+    text-align: center;
+    background:transparent; /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10; /* Ensure text is above images */
+}
+
+
+@media (max-width: 480px) {
+    .carousel {
+        background-color: white;
+        height: 700vh;
+    }
+    .textContainer {
+        position: absolute;
+        top: 10px; /* Adjust as needed */
+      
+        transform: translateX(-50%);
+        width: 80%; /* Adjust width as needed */
+        text-align: center;
+        background:transparent; /* Semi-transparent background */
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 10; /* Ensure text is above images */
+    }
+    
+    .firstImage {
+        width: 220px;
+        height: 100px;
+        margin-left: -37%;
+        position: relative;
+        transform: scale(1);
+    }
+    .images {
+        display: inline-flex; /* Ensure horizontal alignment */
+        width: auto; /* Allow width to expand based on content */
+        margin-top: 400px;
+        grid-gap: 0;
+    }
+   
+.firstImageWrapper{
+    margin-left: -360px !important;
+}
+.firstImageText {
+    font-size: 1.4rem !important; /* Desired font size */
+
+    text-align: center !important; /* Center text */
+    left: 5% !important; /* Center horizontally */
+    transform: translateX(-50%) !important; /* Keep centered */
+    max-width: 120% !important; /* Adjust width to fit two lines */
+    line-height: 1.4 !important; /* Adjust line spacing for readability */
+    padding: 0 0; /* Add some padding to avoid edge clipping */
+}
+.imageItem {
+    width: 220px; /* Adjust width for smaller screens */
+    margin-right: 10vw; /* Adjust space between images */
+    margin-left: 100px;
+}
+
+.emptySpace {
+    width: 550px; /* Adjust width for smaller screens */
+}
+}
